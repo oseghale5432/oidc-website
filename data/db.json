@@ -1,0 +1,105 @@
+{
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Will You Be Our Next Resident",
+      "slug": "will-you-be-our-next-resident",
+      "excerpt": "Join our growing community at Orange Island Lagos",
+      "content": "We are excited to welcome new residents to Orange Island. Our community offers secure lakeside living with world-class planning and effortless access to vibrant amenities.",
+      "date": "2025-12-22",
+      "createdAt": "2025-12-22T00:00:00Z",
+      "image": "/images/WhatsApp Image 2026-06-01 at 07.46.59.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Orange Island Development Company",
+      "slug": "orange-island-development-company",
+      "excerpt": "Learn about our development vision",
+      "content": "Orange Island Development Company is committed to creating sustainable, vibrant communities that blend luxury with accessibility.",
+      "date": "2025-07-15",
+      "createdAt": "2025-07-15T00:00:00Z",
+      "image": "/images/WhatsApp Image 2026-06-01 at 07.47.00.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Welcoming Residents",
+      "slug": "welcoming-residents",
+      "excerpt": "Our community welcomes new families",
+      "content": "We are thrilled to welcome residents to our development. Each cluster offers unique identity and secure access to the lake.",
+      "date": "2024-12-19",
+      "createdAt": "2024-12-19T00:00:00Z",
+      "image": "/images/WhatsApp Image 2026-06-01 at 07.47.00 (1).jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Lagos State Building Permit",
+      "slug": "lagos-state-building-permit",
+      "excerpt": "Official approval from Lagos State",
+      "content": "Orange Island has received approval from Lagos State for development. This marks a significant milestone in our vision.",
+      "date": "2024-05-20",
+      "createdAt": "2024-05-20T00:00:00Z",
+      "image": "/images/orange-island-2048x1157.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Decentralized Energy Limited (DEL)",
+      "description": "DEL a company committed to transforming how energy is delivered",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/04/solutions-section-image-1024x683.webp",
+      "href": "https://orange.bizev.net/del/",
+      "createdAt": "2026-06-02T09:12:56.242Z"
+    },
+    {
+      "id": 2,
+      "title": "Venco Estate App",
+      "description": "Venco is a technology company that provides security access control solutions",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/04/venco-1024x538.png",
+      "href": "/venco-app",
+      "createdAt": "2026-06-02T09:12:56.242Z"
+    },
+    {
+      "id": 3,
+      "title": "Intercontra",
+      "description": "Intercontra, a leading telecommunications infrastructure and solutions provider",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/04/Cell-towers_small-1024x683.jpg",
+      "href": "https://orange.bizev.net/inter-contra/",
+      "createdAt": "2026-06-02T09:12:56.242Z"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Lakeside Cultural Festival",
+      "description": "Join us for our annual lakeside festival celebrating local culture, arts, food, and music under the stars.",
+      "date": "2026-07-18",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/01/orange_mcc-1.jpg",
+      "createdAt": "2026-06-02T09:19:29.285Z"
+    },
+    {
+      "id": 2,
+      "title": "Community Clean Energy Seminar",
+      "description": "Learn about Orange Island's green energy initiatives and smart infrastructure with our expert panel.",
+      "date": "2026-08-05",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/01/image-6.png",
+      "createdAt": "2026-06-02T09:19:29.285Z"
+    },
+    {
+      "id": 3,
+      "title": "Youth Yachting & Watersports",
+      "description": "An exciting weekend of watersports, sailing training, and lakeside races for the younger community members.",
+      "date": "2026-09-12",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/01/image-7.png",
+      "createdAt": "2026-06-02T09:19:29.285Z"
+    },
+    {
+      "id": 4,
+      "title": "Art Exhibition & Reception",
+      "description": "Explore contemporary art displays by national artists in our main pavilion, accompanied by a networking reception.",
+      "date": "2026-10-22",
+      "image": "https://orange.bizev.net/wp-content/uploads/2026/01/orange_abc.jpg",
+      "createdAt": "2026-06-02T09:19:29.285Z"
+    }
+  ],
+  "contactSubmissions": []
+}
