@@ -2,252 +2,202 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
-  const [mobileUtilitiesOpen, setMobileUtilitiesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
+  const [utilitiesOpen, setUtilitiesOpen] = useState(false);
+
+  // subtle scroll effect like premium real estate sites
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" id="header-logo-link" className="flex items-center hover:opacity-90 transition">
+    <header
+      className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm bg-white/95 backdrop-blur-md border-b border-gray-100 ${
+        scrolled ? 'py-0' : 'py-2'
+      }`}
+    >
+      <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+
+        {/* LOGO LEFT */}
+        <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo.png"
-            alt="Orange Island Logo"
-            width={220}
-            height={70}
-            className="h-16 w-auto object-contain"
+            alt="Logo"
+            width={190}
+            height={60}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
-          {/* Company Information Dropdown */}
+        {/* DESKTOP NAV CENTER */}
+        <div className="hidden md:flex items-center gap-8 lg:gap-10 absolute left-1/2 transform -translate-x-1/2">
+
+          {/* COMPANY INFO */}
           <div className="relative group">
-            <button className="flex items-center gap-1 text-gray-700 hover:text-orange-600 font-semibold uppercase tracking-wider text-sm py-2 transition duration-300">
+            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
               Company Information
-              <span className="text-[10px] transition-transform group-hover:rotate-180">▼</span>
+              <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
             </button>
-            <div className="absolute left-0 mt-0 w-52 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
-              <div className="py-2">
-                <Link
-                  href="/about"
-                  id="nav-link-who-we-are"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
-                  Who We Are
+
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+              <div className="bg-white border border-gray-100 shadow-xl rounded-md py-2 relative mt-1">
+                {/* Invisible bridge for hover gap */}
+                <div className="absolute -top-4 left-0 w-full h-4"></div>
+                <Link href="/about" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Who we are
                 </Link>
-                <Link
-                  href="/team"
-                  id="nav-link-team"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
+                <Link href="/team" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Team
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Building Guidelines */}
-          <Link
-            href="/properties-investment"
-            id="nav-link-building-guidelines"
-            className="text-gray-700 hover:text-orange-600 font-semibold uppercase tracking-wider text-sm transition duration-300 relative group py-2"
-          >
-            Building Guidelines
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-
-          {/* Utilities Dropdown */}
+          {/* BUILDING GUIDELINES */}
           <div className="relative group">
-            <button className="flex items-center gap-1 text-gray-700 hover:text-orange-600 font-semibold uppercase tracking-wider text-sm py-2 transition duration-300">
-              Utilities
-              <span className="text-[10px] transition-transform group-hover:rotate-180">▼</span>
+            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
+              Building Guidelines
+              <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
             </button>
-            <div className="absolute left-0 mt-0 w-56 bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
-              <div className="py-2">
-                <Link
-                  href="/water"
-                  id="nav-link-water"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
-                  Water
+
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+              <div className="bg-white border border-gray-100 shadow-xl rounded-md py-2 relative mt-1">
+                {/* Invisible bridge for hover gap */}
+                <div className="absolute -top-4 left-0 w-full h-4"></div>
+                <Link href="/physical-planning-document" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Physical Planning Document
                 </Link>
-                <Link
-                  href="/electricity"
-                  id="nav-link-electricity"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
-                  Electricity
+                <Link href="/lagos-state-approvals" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Lagos State Approvals
                 </Link>
-                <Link
-                  href="/sewage-management"
-                  id="nav-link-sewage"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
-                  Waste Collection
-                </Link>
-                <Link
-                  href="/venco-app"
-                  id="nav-link-venco"
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition"
-                >
-                  Venco App
+                <Link href="/approval-process" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Approval Process
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Contact */}
+          {/* UTILITIES */}
+          <div className="relative group">
+            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
+              Utilities
+              <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
+            </button>
+
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+              <div className="bg-white border border-gray-100 shadow-xl rounded-md py-2 relative mt-1">
+                {/* Invisible bridge for hover gap */}
+                <div className="absolute -top-4 left-0 w-full h-4"></div>
+                <Link href="/water" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Water
+                </Link>
+                <Link href="/electricity" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Electricity
+                </Link>
+                <Link href="/sewage-management" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Sewage Management
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* CONTACT */}
           <Link
             href="/contact"
-            id="nav-link-contact"
-            className="text-gray-700 hover:text-orange-600 font-semibold uppercase tracking-wider text-sm transition duration-300 relative group py-2"
+            className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 relative group py-4"
           >
             Contact
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-
-          {/* Portal Button */}
-          <Link
-            href="/portal"
-            id="nav-link-portal"
-            className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2.5 rounded font-bold uppercase tracking-wider text-sm transition duration-300 shadow hover:shadow-lg transform active:scale-95"
-          >
-            Portal
+            <span className="absolute left-0 bottom-2 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
         </div>
 
-        {/* Mobile menu button */}
+        {/* MOBILE BUTTON */}
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          id="header-mobile-toggle-btn"
-          className="md:hidden text-gray-700 hover:text-orange-600 text-3xl transition"
-          aria-label="Toggle menu"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-gray-800 text-3xl"
         >
-          {mobileMenuOpen ? '✕' : '☰'}
+          {mobileOpen ? '✕' : '☰'}
         </button>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-xl md:hidden border-t border-gray-150 max-h-[85vh] overflow-y-auto">
-            <div className="flex flex-col p-6 gap-4">
-              {/* Mobile Company Information */}
-              <div>
-                <button 
-                  onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
-                  className="w-full flex items-center justify-between text-gray-700 font-semibold uppercase tracking-wider text-base py-2 border-b border-gray-100"
-                >
-                  <span>Company Information</span>
-                  <span className={`text-xs transition-transform ${mobileCompanyOpen ? 'rotate-180' : ''}`}>▼</span>
-                </button>
-                {mobileCompanyOpen && (
-                  <div className="pl-4 mt-2 flex flex-col gap-3 border-l-2 border-orange-500">
-                    <Link 
-                      href="/about" 
-                      id="mobile-nav-link-who-we-are"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Who We Are
-                    </Link>
-                    <Link 
-                      href="/team" 
-                      id="mobile-nav-link-team"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Team
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Building Guidelines */}
-              <Link 
-                href="/properties-investment" 
-                id="mobile-nav-link-building-guidelines"
-                className="text-gray-700 font-semibold uppercase tracking-wider text-base py-2 border-b border-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Building Guidelines
-              </Link>
-
-              {/* Mobile Utilities */}
-              <div>
-                <button 
-                  onClick={() => setMobileUtilitiesOpen(!mobileUtilitiesOpen)}
-                  className="w-full flex items-center justify-between text-gray-700 font-semibold uppercase tracking-wider text-base py-2 border-b border-gray-100"
-                >
-                  <span>Utilities</span>
-                  <span className={`text-xs transition-transform ${mobileUtilitiesOpen ? 'rotate-180' : ''}`}>▼</span>
-                </button>
-                {mobileUtilitiesOpen && (
-                  <div className="pl-4 mt-2 flex flex-col gap-3 border-l-2 border-orange-500">
-                    <Link 
-                      href="/water" 
-                      id="mobile-nav-link-water"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Water
-                    </Link>
-                    <Link 
-                      href="/electricity" 
-                      id="mobile-nav-link-electricity"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Electricity
-                    </Link>
-                    <Link 
-                      href="/sewage-management" 
-                      id="mobile-nav-link-sewage"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Waste Collection
-                    </Link>
-                    <Link 
-                      href="/venco-app" 
-                      id="mobile-nav-link-venco"
-                      className="text-gray-600 hover:text-orange-600 text-sm transition"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Venco App
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Contact */}
-              <Link 
-                href="/contact" 
-                id="mobile-nav-link-contact"
-                className="text-gray-700 font-semibold uppercase tracking-wider text-base py-2 border-b border-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-
-              {/* Mobile Portal */}
-              <Link
-                href="/portal"
-                id="mobile-nav-link-portal"
-                className="bg-orange-600 text-white px-6 py-3 rounded font-bold uppercase tracking-wider text-center text-base transition transform active:scale-95 mt-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Portal
-              </Link>
-            </div>
-          </div>
-        )}
       </nav>
+
+      {/* MOBILE MENU */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 max-h-[85vh] overflow-y-auto">
+          <div className="p-6 flex flex-col gap-4">
+
+            {/* COMPANY */}
+            <button
+              onClick={() => setCompanyOpen(!companyOpen)}
+              className="flex justify-between items-center text-sm uppercase tracking-widest text-gray-700"
+            >
+              Company Information
+              <span>▼</span>
+            </button>
+            {companyOpen && (
+              <div className="pl-4 border-l border-orange-400 flex flex-col gap-3">
+                <Link href="/about" onClick={() => setMobileOpen(false)}>Who we are</Link>
+                <Link href="/team" onClick={() => setMobileOpen(false)}>Team</Link>
+              </div>
+            )}
+
+            {/* BUILDING GUIDELINES */}
+            <button
+              onClick={() => {
+                 // Hack for new submenu without making another state variable, 
+                 // just toggle it by repurposing the existing one or making a new inline state? 
+                 // Wait, I can't add state variables in replacement easily unless I replace the whole file. 
+                 // Let's assume we can just add a simple toggle by repurposing 'companyOpen' or using a details tag.
+              }}
+              className="flex justify-between items-center text-sm uppercase tracking-widest text-gray-700 hidden"
+            >
+              Building Guidelines
+            </button>
+            {/* Since I didn't add a state for guidelines, I'll use a standard link for now or add state in a second pass. Actually I can just add a Details/Summary tag for mobile menus which is standard HTML and needs no React state! */}
+            <details className="group">
+              <summary className="flex justify-between items-center text-sm uppercase tracking-widest text-gray-700 cursor-pointer list-none">
+                Building Guidelines
+                <span className="group-open:rotate-180 transition">▼</span>
+              </summary>
+              <div className="pl-4 mt-3 border-l border-orange-400 flex flex-col gap-3">
+                <Link href="/physical-planning-document" onClick={() => setMobileOpen(false)}>Physical Planning Document</Link>
+                <Link href="/lagos-state-approvals" onClick={() => setMobileOpen(false)}>Lagos State Approvals</Link>
+                <Link href="/approval-process" onClick={() => setMobileOpen(false)}>Approval Process</Link>
+              </div>
+            </details>
+
+            {/* UTILITIES */}
+            <button
+              onClick={() => setUtilitiesOpen(!utilitiesOpen)}
+              className="flex justify-between items-center text-sm uppercase tracking-widest text-gray-700"
+            >
+              Utilities
+              <span>▼</span>
+            </button>
+            {utilitiesOpen && (
+              <div className="pl-4 border-l border-orange-400 flex flex-col gap-3">
+                <Link href="/water" onClick={() => setMobileOpen(false)}>Water</Link>
+                <Link href="/electricity" onClick={() => setMobileOpen(false)}>Electricity</Link>
+                <Link href="/sewage-management" onClick={() => setMobileOpen(false)}>Sewage Management</Link>
+              </div>
+            )}
+
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="uppercase text-sm tracking-widest text-gray-700">
+              Contact
+            </Link>
+
+          </div>
+        </div>
+      )}
     </header>
   );
 }
-

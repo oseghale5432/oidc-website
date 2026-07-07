@@ -93,9 +93,10 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Main Content */}
             <div className="prose prose-lg max-w-none">
-              <div className="text-gray-800 leading-relaxed whitespace-pre-wrap text-lg font-light">
-                {post.content}
-              </div>
+              <div 
+                className="text-gray-800 leading-relaxed text-lg font-light blog-content-html"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </div>
 
             {/* Post Meta Box */}

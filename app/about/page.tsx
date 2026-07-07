@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function About() {
   const landAllocations = [
-    { name: 'Residential', percentage: '63.6%', color: 'bg-orange-500' },
-    { name: 'Road Reserve', percentage: '18.25%', color: 'bg-gray-600' },
-    { name: 'Open Space / Greenery', percentage: '11.49%', color: 'bg-emerald-600' },
-    { name: 'Mixed Use', percentage: '5.39%', color: 'bg-amber-600' },
-    { name: 'Public Use / Institutional', percentage: '0.74%', color: 'bg-blue-600' },
-    { name: 'Industrial', percentage: '0.53%', color: 'bg-red-600' },
+    { name: 'Residential', hectares: '95.90', percentage: '63.6%' },
+    { name: 'Road Reserve', hectares: '27.53', percentage: '18.25%' },
+    { name: 'Open-Space / Green Areas', hectares: '17.33', percentage: '11.49%' },
+    { name: 'Mixed Use', hectares: '8.13', percentage: '5.39%' },
+    { name: 'Public / Institutional', hectares: '1.10', percentage: '0.74%' },
+    { name: 'Industrial', hectares: '0.80', percentage: '0.53%' },
   ];
 
   return (
@@ -31,9 +31,7 @@ export default function About() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
-          <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
-            Orange Island Lagos
-          </span>
+
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight max-w-3xl leading-tight">
             About the <span className="text-orange-500">Island</span>
           </h1>
@@ -46,18 +44,17 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-xs font-bold tracking-widest text-orange-600 uppercase mb-3">Waterfront Development</h2>
               <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">Overview</h3>
               <div className="space-y-6 text-lg text-gray-700 font-light leading-relaxed">
                 <p>
-                  Orange Island is a premium waterfront development delivered through a Public Private Partnership 
-                  between <strong className="font-semibold text-gray-900">Orange Island Development Company</strong> and the <strong className="font-semibold text-gray-900">Lagos State Government</strong>. 
-                  Designed by teams of national and international reputation, the island reflects Lagos State’s vision of 
+                  Orange Island is a premium waterfront development delivered through a Public Private Partnership
+                  between <strong className="font-semibold text-gray-900">Orange Island Development Company</strong> and the <strong className="font-semibold text-gray-900">Lagos State Government</strong>.
+                  Designed by teams of national and international reputation, the island reflects Lagos State’s vision of
                   building an organised smart city that uses resources efficiently and sustainably.
                 </p>
                 <p>
-                  Blending modern infrastructure with elegant design, Orange Island offers a secure, well-planned environment 
-                  where residential, commercial, and lifestyle spaces thrive together. With safety, smart systems, and strong 
+                  Blending modern infrastructure with elegant design, Orange Island offers a secure, well-planned environment
+                  where residential, commercial, and lifestyle spaces thrive together. With safety, smart systems, and strong
                   community values at its core, Orange Island sets a new standard for contemporary urban living in Lagos.
                 </p>
               </div>
@@ -98,41 +95,55 @@ export default function About() {
       <section className="py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
-              <h2 className="text-xs font-bold tracking-widest text-orange-600 uppercase mb-3">Mega City Layout</h2>
+            <div className="lg:col-span-4">
               <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">The Masterplan</h3>
               <p className="text-lg text-gray-700 font-light leading-relaxed mb-8">
-                The project is conceived with the singular aim of creating a super modern up-market residential, 
-                mixed use and commercial use mega city on a reclaimed island in the gentle waters of the Lagos Lagoon 
-                abutting the Lekki Phase 1 foreshore. The project, which accounts for 150 hectares of land exclusive of the 
-                water features, involves the dredging of sand from the bed of the Lagos Lagoon, the construction of an 
+                The project is conceived with the singular aim of creating a super modern up-market residential,
+                mixed use and commercial use mega city on a reclaimed island in the gentle waters of the Lagos Lagoon
+                abutting the Lekki Phase 1 foreshore. The project, which accounts for 150 hectares of land exclusive of the
+                water features, involves the dredging of sand from the bed of the Lagos Lagoon, the construction of an
                 access land bridge and the creation of infrastructure to service the island.
               </p>
 
-              {/* Land Use Allocation */}
-              <h4 className="font-bold text-gray-950 text-xl mb-6">Land Use Allocations</h4>
-              <div className="grid sm:grid-cols-2 gap-6">
+              {/* Land Use Allocation - Masterplan Table */}
+              <div className="mb-6 rounded-2xl overflow-hidden shadow-md border border-gray-200">
+                {/* Table Header */}
+                <div className="bg-orange-500 px-5 py-3">
+                  <h4 className="font-bold text-white text-base tracking-wide">Masterplan Allocation Table</h4>
+                </div>
+                {/* Column Labels */}
+                <div className="grid grid-cols-3 bg-white px-5 py-2 border-b border-gray-200">
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Land Use</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center">Hectares</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-right">Allocation</span>
+                </div>
+                {/* Data Rows */}
                 {landAllocations.map((alloc, idx) => (
-                  <div key={idx} className="bg-white p-5 border border-gray-150 rounded-xl shadow-sm hover:shadow transition">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold text-gray-800 text-sm">{alloc.name}</span>
-                      <span className="text-orange-600 font-bold text-base">{alloc.percentage}</span>
-                    </div>
-                    <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
-                      <div className={`h-full ${alloc.color}`} style={{ width: alloc.percentage }} />
-                    </div>
+                  <div
+                    key={idx}
+                    className="grid grid-cols-3 items-center px-5 py-3 border-b border-gray-100 bg-white hover:bg-orange-50/40 transition-colors"
+                  >
+                    <span className="text-sm font-semibold text-gray-800">{alloc.name}</span>
+                    <span className="text-sm text-blue-600 text-center">{alloc.hectares}</span>
+                    <span className="text-sm font-bold text-orange-500 text-right">{alloc.percentage}</span>
                   </div>
                 ))}
+                {/* Total Row */}
+                <div className="grid grid-cols-3 items-center px-5 py-3 bg-orange-50">
+                  <span className="text-sm font-bold text-gray-900">Total</span>
+                  <span className="text-sm font-bold text-gray-900 text-center">150.00</span>
+                  <span className="text-sm font-bold text-gray-900 text-right">100%</span>
+                </div>
               </div>
             </div>
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative h-[320px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <div className="relative h-[560px] w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                 <Image
                   src="/images/orange_map.jpg"
                   alt="Orange Island Masterplan Map"
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover w-full h-full"
+                  sizes="100vw"
                 />
               </div>
               <div className="bg-orange-500 rounded-2xl p-8 text-white shadow-lg">
@@ -149,21 +160,20 @@ export default function About() {
       {/* Location Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-[440px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100 lg:order-2">
+          <div className="grid lg:grid-cols-1 gap-8 items-center">
+            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
               <Image
                 src="/images/orange_location-2048x1157.jpg"
                 alt="Lekki Phase 1 Location Map"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="100vw"
               />
             </div>
-            <div className="lg:order-1">
-              <h2 className="text-xs font-bold tracking-widest text-orange-600 uppercase mb-3">Prime Position</h2>
-              <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">Location & Connectivity</h3>
+            <div>
+              <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">Location &amp; Connectivity</h3>
               <p className="text-lg text-gray-700 font-light leading-relaxed mb-6">
-                Orange Island is perfectly positioned just a kilometre from Lekki Phase 1, adjacent to the Lekki Foreshore Reclamation project. 
+                Orange Island is perfectly positioned just a kilometre from Lekki Phase 1, adjacent to the Lekki Foreshore Reclamation project.
                 With seamless access via the Lekki-Ikoyi Link Bridge and Lekki-Epe Expressway through Freedom Way, connectivity is effortless.
               </p>
               <p className="text-lg text-gray-700 font-light leading-relaxed">

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Venco Estate App - Orange Island Lagos',
@@ -18,27 +17,27 @@ export default function VencoPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-[#f9eafe]/40 overflow-hidden py-16 md:py-24 border-b border-purple-100">
+      <section className="relative bg-orange-50/40 overflow-hidden py-16 md:py-24 border-b border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <span className="text-purple-600 font-bold uppercase tracking-widest text-sm block mb-3">
+            <span className="text-orange-600 font-bold uppercase tracking-widest text-sm block mb-3">
               Orange Island Partnership
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Community Access & Security via <span className="text-purple-600">Venco App</span>
+              Community Access & Security via <span className="text-orange-600">Venco App</span>
             </h1>
             <p className="text-lg text-gray-700 font-light leading-relaxed mb-8">
-              We are delighted to announce our partnership with Venco, a technology company that provides solutions 
-              to enhance living experiences in residential and commercial communities, enhancing security and access control 
+              We are delighted to announce our partnership with Venco, a technology company that provides solutions
+              to enhance living experiences in residential and commercial communities, enhancing security and access control
               across Orange Island.
             </p>
-            <p className="text-sm text-gray-500 font-light bg-purple-50 p-4 border-l-2 border-purple-500 rounded-r-lg mb-8">
+            <p className="text-sm text-gray-500 font-light bg-orange-50 p-4 border-l-2 border-orange-500 rounded-r-lg mb-8">
               🔒 This portal feature is available exclusively to all plot owners with up-to-date payments and subscriptions.
             </p>
-            
+
             {/* Download Links */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
+              <a
                 href="https://apps.apple.com/ng/app/venco-estate-app/id1542447397"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,7 +49,7 @@ export default function VencoPage() {
                   <p className="text-sm font-semibold -mt-1">App Store</p>
                 </div>
               </a>
-              <a 
+              <a
                 href="https://play.google.com/store/apps/details?id=com.manqala.estatemanager"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +63,7 @@ export default function VencoPage() {
               </a>
             </div>
           </div>
-          
+
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
               <Image
@@ -83,16 +82,16 @@ export default function VencoPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-xs font-bold tracking-widest text-purple-600 uppercase mb-3">Capabilities</h2>
+            <h2 className="text-xs font-bold tracking-widest text-orange-600 uppercase mb-3">Capabilities</h2>
             <h3 className="text-3xl font-bold text-gray-900">What Venco Enables for Residents</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feat, idx) => (
-              <div 
-                key={idx} 
-                className="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow transition duration-300 hover:border-purple-300"
+              <div
+                key={idx}
+                className="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow transition duration-300 hover:border-orange-300"
               >
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl font-bold mb-5">
+                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-xl font-bold mb-5">
                   0{idx + 1}
                 </div>
                 <h4 className="font-bold text-gray-950 text-lg mb-3">{feat.title}</h4>
@@ -103,22 +102,6 @@ export default function VencoPage() {
         </div>
       </section>
 
-      {/* Link to Portal */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Access the Web Portal</h2>
-          <p className="text-lg text-purple-50 mb-8 font-light leading-relaxed">
-            Plot owners and residents can also access portal features online through their web browser.
-          </p>
-          <Link
-            href="/portal"
-            id="venco-cta-portal"
-            className="inline-block bg-white text-purple-950 px-8 py-4 rounded font-bold uppercase tracking-wider text-sm transition hover:bg-purple-50 shadow"
-          >
-            Go to Web Portal
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

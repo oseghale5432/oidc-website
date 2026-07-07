@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 export default function Footer() {
   return (
@@ -47,11 +48,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/portal" id="footer-link-portal" className="text-gray-400 hover:text-amber-400 transition text-sm">
-                  Portal
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" id="footer-link-contact" className="text-gray-400 hover:text-amber-400 transition text-sm">
                   Contact
                 </Link>
@@ -64,19 +60,19 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6 text-white">Contact Info</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <span className="text-amber-400 mt-1" aria-hidden="true">📧</span>
+                <EnvelopeIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
                 <a href="mailto:hello@orangeislandng.com" id="footer-contact-email" className="text-gray-400 hover:text-amber-400 transition">
                   hello@orangeislandng.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-amber-400 mt-1" aria-hidden="true">📱</span>
+                <PhoneIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
                 <a href="tel:+2348132992279" id="footer-contact-phone" className="text-gray-400 hover:text-amber-400 transition">
                   +234 813 299 2279
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-amber-400 mt-1" aria-hidden="true">📍</span>
+                <MapPinIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
                 <span className="text-gray-400 leading-relaxed">
                   Orange Island Development Company,<br />
                   On Oba Ademola Elegushi Boulevard,<br />
@@ -111,7 +107,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm font-light">
-            &copy; 2026 Orange Island Lagos. All rights reserved. | Created with ❤️ for our community
+            &copy; 2026 Orange Island Lagos. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="#" id="footer-link-privacy" className="text-gray-400 hover:text-amber-400 transition text-sm">
