@@ -21,11 +21,21 @@ export default function Header() {
 
   return (
     <header
-      className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm bg-white/95 backdrop-blur-md border-b border-gray-100 ${
+      className={`relative w-full z-50 transition-all duration-300 bg-white border-b border-slate-200 ${
         scrolled ? 'py-0' : 'py-2'
       }`}
     >
-      <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="pointer-events-none absolute right-20 top-1/2 z-10 -translate-y-1/2 sm:right-24 md:right-6 lg:right-10">
+        <Image
+          src="/images/proudly-nigerian.png"
+          alt="Proudly Nigerian"
+          width={110}
+          height={110}
+          className="h-auto w-16 opacity-90 drop-shadow-md sm:w-20 lg:w-24"
+          priority
+        />
+      </div>
+      <nav className="relative max-w-7xl mx-auto px-6 lg:px-8 h-24 flex items-center justify-between">
 
         {/* LOGO LEFT */}
         <Link href="/" className="flex-shrink-0">
@@ -34,7 +44,7 @@ export default function Header() {
             alt="Logo"
             width={190}
             height={60}
-            className="h-12 w-auto object-contain"
+            className="h-11 w-auto object-contain"
             priority
           />
         </Link>
@@ -44,7 +54,7 @@ export default function Header() {
 
           {/* COMPANY INFO */}
           <div className="relative group">
-            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
+            <button className="text-[12px] tracking-[0.08em] uppercase text-slate-700 hover:text-slate-950 transition font-semibold flex items-center gap-2 py-4">
               Company Information
               <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
             </button>
@@ -65,7 +75,7 @@ export default function Header() {
 
           {/* BUILDING GUIDELINES */}
           <div className="relative group">
-            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
+            <button className="text-[12px] tracking-[0.08em] uppercase text-slate-700 hover:text-slate-950 transition font-semibold flex items-center gap-2 py-4">
               Building Guidelines
               <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
             </button>
@@ -89,7 +99,7 @@ export default function Header() {
 
           {/* UTILITIES */}
           <div className="relative group">
-            <button className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 transition font-medium flex items-center gap-1 py-4">
+            <button className="text-[12px] tracking-[0.08em] uppercase text-slate-700 hover:text-slate-950 transition font-semibold flex items-center gap-2 py-4">
               Utilities
               <span className="text-[9px] group-hover:rotate-180 transition">▼</span>
             </button>
@@ -107,6 +117,9 @@ export default function Header() {
                 <Link href="/sewage-management" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Sewage Management
                 </Link>
+                <Link href="/waste-collection" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                  Waste Collection
+                </Link>
               </div>
             </div>
           </div>
@@ -114,7 +127,7 @@ export default function Header() {
           {/* CONTACT */}
           <Link
             href="/contact"
-            className="text-[13px] tracking-[0.1em] uppercase text-gray-700 hover:text-orange-600 relative group py-4"
+            className="text-[12px] tracking-[0.08em] uppercase text-slate-700 hover:text-slate-950 relative group py-4 font-semibold"
           >
             Contact
             <span className="absolute left-0 bottom-2 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300"></span>
@@ -188,6 +201,7 @@ export default function Header() {
                 <Link href="/water" onClick={() => setMobileOpen(false)}>Water</Link>
                 <Link href="/electricity" onClick={() => setMobileOpen(false)}>Electricity</Link>
                 <Link href="/sewage-management" onClick={() => setMobileOpen(false)}>Sewage Management</Link>
+                <Link href="/waste-collection" onClick={() => setMobileOpen(false)}>Waste Collection</Link>
               </div>
             )}
 

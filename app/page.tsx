@@ -17,16 +17,20 @@ export default async function Home() {
   return (
     <div className="bg-white">
       {/* ── HERO SECTION ── */}
-      <section
-        className="relative min-h-screen w-full overflow-hidden"
-        style={{
-          background:
-            'linear-gradient(180deg, #742117 0%, #b24a24 45%, #e17c2e 80%, #f7b24a 100%)',
-        }}
-      >
+      <section className="relative min-h-[760px] w-full overflow-hidden bg-slate-950 text-white">
+        <Image
+          src="/images/orange-island-2048x1157.jpg"
+          alt="Aerial view of Orange Island and the Lagos waterfront"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/55 to-slate-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/30" />
 
         {/* ── AMBIENT LIGHTING LAYERS ── */}
-        <div className="absolute inset-0">
+        <div className="hidden">
 
           {/* top deep warmth */}
           <div className="absolute top-[-20%] left-[-10%] w-[700px] h-[700px] bg-[#5a1b13]/30 blur-[180px] rounded-full" />
@@ -47,29 +51,24 @@ export default async function Home() {
         </div>
 
         {/* ── CENTER LOGO ── */}
-        <div className="relative z-20 flex items-center justify-center min-h-screen px-4">
-
-          <Image
-            src="/logo-white.png"
-            alt="Orange Island Lagos"
-            width={700}
-            height={700}
-            priority
-            className="
-              w-[55vw]
-              md:w-[48vw]
-              lg:w-[40vw]
-              xl:w-[36vw]
-              h-auto
-              object-contain
-              select-none
-            "
-          />
-
+        <div className="relative z-20 mx-auto flex min-h-[760px] max-w-7xl items-center px-6 pb-20 pt-32 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/75">A waterfront community in Lagos</p>
+            <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              Thoughtfully planned.<br />Built for generations.
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
+              Orange Island brings together secure waterfront living, resilient infrastructure and responsible urban planning in the heart of Lagos.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/about" className="inline-flex items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">Discover Orange Island</Link>
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Contact our team</Link>
+            </div>
+          </div>
         </div>
 
         {/* ── INTRO FLOWER ── */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex justify-center w-full">
+        <div className="hidden">
           <Image
             src="/images/intro-flower.png"
             alt="Bird of Paradise Flower"
@@ -85,10 +84,11 @@ export default async function Home() {
 
       </section>
       {/* Projects Section */}
-      <section className="bg-[#f7efe7] py-20">
+      <section className="bg-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">Projects</h2>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Our development</p>
+            <h2 className="text-4xl md:text-5xl font-semibold text-slate-950 mb-6 tracking-tight">Projects</h2>
             <p className="max-w-5xl text-xl leading-9 text-gray-800 font-light">
               Experience the visionary projects and thoughtful developments bringing Orange Island to life, from smart infrastructure to vibrant, sustainable communities.
             </p>
@@ -218,16 +218,16 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-16">
+      <section className="bg-[#17202a] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Join Our Community?</h2>
-          <p className="text-xl text-amber-50 mb-8 max-w-2xl mx-auto font-light">
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-light">
             Contact us today to learn more about available properties and become part of the Orange Island family.
           </p>
           <Link
             href="/contact"
             id="home-cta-get-started"
-            className="inline-block bg-white text-amber-900 px-10 py-4 rounded-lg font-bold hover:bg-amber-50 transition transform hover:scale-105 shadow-lg"
+            className="inline-block bg-white text-slate-950 px-10 py-4 rounded-md font-semibold hover:bg-slate-100 transition"
           >
             Get Started Today
           </Link>

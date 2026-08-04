@@ -4,209 +4,119 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About The Island - Orange Island Lagos',
-  description: 'Orange Island is a premium waterfront development delivered through a Public Private Partnership between Orange Island Development Company and the Lagos State Government.',
+  description: 'Learn about Orange Island, a premium waterfront development by Orange Island Development Company and the Lagos State Government.',
 };
 
+const allocations = [
+  ['Residential', '95.90', '63.60%'],
+  ['Road Reserve', '27.53', '18.25%'],
+  ['Open Space / Green Areas', '17.33', '11.49%'],
+  ['Mixed Use', '8.13', '5.39%'],
+  ['Public / Institutional', '1.10', '0.74%'],
+  ['Industrial', '0.80', '0.53%'],
+];
+
 export default function About() {
-  const landAllocations = [
-    { name: 'Residential', hectares: '95.90', percentage: '63.6%' },
-    { name: 'Road Reserve', hectares: '27.53', percentage: '18.25%' },
-    { name: 'Open-Space / Green Areas', hectares: '17.33', percentage: '11.49%' },
-    { name: 'Mixed Use', hectares: '8.13', percentage: '5.39%' },
-    { name: 'Public / Institutional', hectares: '1.10', percentage: '0.74%' },
-    { name: 'Industrial', hectares: '0.80', percentage: '0.53%' },
-  ];
-
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/Header_Image.png"
-            alt="Orange Island Lagos"
-            fill
-            className="object-cover brightness-[0.35]"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
-
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight max-w-3xl leading-tight">
-            About the <span className="text-orange-500">Island</span>
-          </h1>
-          <div className="w-20 h-1 bg-orange-500 rounded"></div>
-        </div>
-      </section>
-
-      {/* Overview Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">Overview</h3>
-              <div className="space-y-6 text-lg text-gray-700 font-light leading-relaxed">
-                <p>
-                  Orange Island is a premium waterfront development delivered through a Public Private Partnership
-                  between <strong className="font-semibold text-gray-900">Orange Island Development Company</strong> and the <strong className="font-semibold text-gray-900">Lagos State Government</strong>.
-                  Designed by teams of national and international reputation, the island reflects Lagos State’s vision of
-                  building an organised smart city that uses resources efficiently and sustainably.
-                </p>
-                <p>
-                  Blending modern infrastructure with elegant design, Orange Island offers a secure, well-planned environment
-                  where residential, commercial, and lifestyle spaces thrive together. With safety, smart systems, and strong
-                  community values at its core, Orange Island sets a new standard for contemporary urban living in Lagos.
-                </p>
-              </div>
-            </div>
-            <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image
-                src="/images/orange-island-2048x1157.jpg"
-                alt="Orange Island Landscape"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+    <div className="bg-white text-[#3e403f]">
+      <section className="bg-[#f8f8f8] py-16 sm:py-20">
+        <div className="mx-auto grid max-w-[1300px] gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+          <div className="max-w-xl">
+            <p className="mb-4 text-sm font-semibold text-[#8f6048]">About Orange Island</p>
+            <h1 className="text-[2.75rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.6rem]">Building a sustainable waterfront community.</h1>
+            <p className="mt-6 text-lg leading-8 text-[#606261]">A planned urban development created to support secure living, modern infrastructure and responsible growth within Lagos.</p>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-[10px]">
+            <Image src="/images/Header_Image.png" alt="Orange Island waterfront community" fill priority className="object-cover" sizes="(min-width: 1024px) 55vw, 100vw" />
           </div>
         </div>
       </section>
 
-      {/* Vision Banner */}
-      <section className="relative py-28 text-white overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 opacity-40 z-0">
-          <Image
-            src="/images/WhatsApp Image 2026-06-01 at 07.47.00.jpeg"
-            alt="Lakeside Living Background"
-            fill
-            className="object-cover brightness-50"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-900/90 to-transparent z-10" />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <h2 className="text-xs font-bold tracking-widest text-orange-500 uppercase mb-4">Our Vision</h2>
-          <p className="text-3xl md:text-5xl font-light max-w-4xl leading-tight font-sans tracking-wide">
-            "To be Lagos’ leading <span className="text-orange-500 font-medium">smart waterfront community</span>, defined by innovation, security, sustainability and a vibrant sense of community."
-          </p>
-        </div>
-      </section>
-
-      {/* Masterplan Section */}
-      <section className="py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-[1140px] px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">The Masterplan</h3>
-              <p className="text-lg text-gray-700 font-light leading-relaxed mb-8">
-                The project is conceived with the singular aim of creating a super modern up-market residential,
-                mixed use and commercial use mega city on a reclaimed island in the gentle waters of the Lagos Lagoon
-                abutting the Lekki Phase 1 foreshore. The project, which accounts for 150 hectares of land exclusive of the
-                water features, involves the dredging of sand from the bed of the Lagos Lagoon, the construction of an
-                access land bridge and the creation of infrastructure to service the island.
-              </p>
-
-              {/* Land Use Allocation - Masterplan Table */}
-              <div className="mb-6 rounded-2xl overflow-hidden shadow-md border border-gray-200">
-                {/* Table Header */}
-                <div className="bg-orange-500 px-5 py-3">
-                  <h4 className="font-bold text-white text-base tracking-wide">Masterplan Allocation Table</h4>
-                </div>
-                {/* Column Labels */}
-                <div className="grid grid-cols-3 bg-white px-5 py-2 border-b border-gray-200">
-                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Land Use</span>
-                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center">Hectares</span>
-                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-right">Allocation</span>
-                </div>
-                {/* Data Rows */}
-                {landAllocations.map((alloc, idx) => (
-                  <div
-                    key={idx}
-                    className="grid grid-cols-3 items-center px-5 py-3 border-b border-gray-100 bg-white hover:bg-orange-50/40 transition-colors"
-                  >
-                    <span className="text-sm font-semibold text-gray-800">{alloc.name}</span>
-                    <span className="text-sm text-blue-600 text-center">{alloc.hectares}</span>
-                    <span className="text-sm font-bold text-orange-500 text-right">{alloc.percentage}</span>
-                  </div>
-                ))}
-                {/* Total Row */}
-                <div className="grid grid-cols-3 items-center px-5 py-3 bg-orange-50">
-                  <span className="text-sm font-bold text-gray-900">Total</span>
-                  <span className="text-sm font-bold text-gray-900 text-center">150.00</span>
-                  <span className="text-sm font-bold text-gray-900 text-right">100%</span>
-                </div>
-              </div>
+              <p className="text-sm font-semibold text-[#8f6048]">Who we are</p>
+              <h2 className="mt-3 text-3xl font-bold text-[#202124] sm:text-[2.75rem]">A shared vision for the future of Lagos.</h2>
             </div>
-            <div className="lg:col-span-8 flex flex-col gap-6">
-              <div className="relative h-[560px] w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                <Image
-                  src="/images/orange_map.jpg"
-                  alt="Orange Island Masterplan Map"
-                  fill
-                  className="object-cover w-full h-full"
-                  sizes="100vw"
-                />
+            <div className="space-y-5 text-[17px] leading-8 text-[#606261] lg:col-span-8">
+              <p>Orange Island is a premium waterfront development delivered through a Public Private Partnership between <strong className="font-semibold text-[#202124]">Orange Island Development Company</strong> and the <strong className="font-semibold text-[#202124]">Lagos State Government</strong>.</p>
+              <p>Designed by teams of national and international reputation, the island reflects Lagos State&apos;s vision of building an organised smart city that uses resources efficiently and sustainably.</p>
+              <p>Residential, commercial and lifestyle spaces are supported by coordinated infrastructure, secure systems and a strong commitment to long-term community management.</p>
+            </div>
+          </div>
+          <div className="mt-16 grid overflow-hidden rounded-[10px] border border-[#dce0e5] md:grid-cols-3">
+            {[
+              ['150 hectares', 'Planned development area'],
+              ['Public-private', 'Lagos State partnership'],
+              ['1 kilometre', 'From Lekki Phase 1'],
+            ].map(([value, label], index) => (
+              <div key={label} className={`p-8 ${index > 0 ? 'border-t border-[#dce0e5] md:border-l md:border-t-0' : ''}`}>
+                <p className="text-2xl font-bold text-[#202124]">{value}</p>
+                <p className="mt-2 text-sm text-[#85878a]">{label}</p>
               </div>
-              <div className="bg-orange-500 rounded-2xl p-8 text-white shadow-lg">
-                <h4 className="text-xl font-bold mb-3">150 Hectares</h4>
-                <p className="text-orange-50 font-light leading-relaxed text-sm">
-                  Exclusive layout designed for absolute lifestyle compatibility, blending commercial, public use, institutional and residential zoning harmoniously.
-                </p>
-              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#202124] py-20 text-white sm:py-24">
+        <div className="mx-auto grid max-w-[1140px] gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[10px]">
+            <Image src="/images/WhatsApp Image 2026-06-01 at 07.47.00.jpeg" alt="Orange Island waterfront lifestyle" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-[#c8aa96]">Our vision</p>
+            <h2 className="mt-4 text-3xl font-bold text-white sm:text-[2.75rem]">Lagos&apos; leading smart waterfront community.</h2>
+            <p className="mt-6 text-lg leading-8 text-[#c5c5c7]">Defined by innovation, security, sustainability and a vibrant sense of community.</p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+              {['Innovation', 'Security', 'Sustainability', 'Community'].map((item) => <span key={item} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#8f6048]" />{item}</span>)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-1 gap-8 items-center">
-            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image
-                src="/images/orange_location-2048x1157.jpg"
-                alt="Lekki Phase 1 Location Map"
-                fill
-                className="object-cover"
-                sizes="100vw"
-              />
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-[1300px] px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold text-[#8f6048]">The masterplan</p>
+            <h2 className="mt-3 text-3xl font-bold text-[#202124] sm:text-[2.75rem]">Planned for balanced urban living.</h2>
+            <p className="mt-5 leading-7 text-[#606261]">The 150-hectare plan brings residential, commercial, public and green spaces together with the infrastructure needed to support the island.</p>
+          </div>
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_0.6fr]">
+            <div className="relative min-h-[520px] overflow-hidden rounded-[10px] border border-[#dce0e5] bg-[#f8f8f8]">
+              <Image src="/images/orange_map.jpg" alt="Orange Island masterplan" fill className="object-cover" sizes="(min-width: 1024px) 68vw, 100vw" />
             </div>
-            <div>
-              <h3 className="text-4xl font-bold mb-8 text-gray-900 leading-tight">Location &amp; Connectivity</h3>
-              <p className="text-lg text-gray-700 font-light leading-relaxed mb-6">
-                Orange Island is perfectly positioned just a kilometre from Lekki Phase 1, adjacent to the Lekki Foreshore Reclamation project.
-                With seamless access via the Lekki-Ikoyi Link Bridge and Lekki-Epe Expressway through Freedom Way, connectivity is effortless.
-              </p>
-              <p className="text-lg text-gray-700 font-light leading-relaxed">
-                Residents are only minutes away from the vibrant shopping, dining, and leisure experiences along Admiralty Way placing the very best of Lekki within easy reach.
-              </p>
+            <div className="overflow-hidden rounded-[10px] border border-[#dce0e5]">
+              <div className="bg-[#f8f8f8] px-5 py-4"><h3 className="text-base font-bold text-[#202124]">Land-use allocation</h3></div>
+              <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr] border-t border-[#dce0e5] px-5 py-3 text-[11px] font-semibold text-[#85878a]"><span>Land use</span><span className="text-right">Ha</span><span className="text-right">Share</span></div>
+              {allocations.map(([name, hectares, share]) => (
+                <div key={name} className="grid grid-cols-[1.5fr_0.7fr_0.7fr] border-t border-[#dce0e5] px-5 py-3.5 text-sm"><span className="font-medium">{name}</span><span className="text-right text-[#85878a]">{hectares}</span><span className="text-right">{share}</span></div>
+              ))}
+              <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr] border-t border-[#c5c5c7] bg-[#f8f8f8] px-5 py-4 text-sm font-bold text-[#202124]"><span>Total</span><span className="text-right">150</span><span className="text-right">100%</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-amber-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Become Part of the Vision</h2>
-          <p className="text-xl text-orange-50 mb-10 font-light leading-relaxed">
-            Discover investment opportunities and find premium plots styled for your lifestyle needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              id="about-cta-contact-us"
-              className="inline-block bg-white text-orange-950 px-8 py-4 rounded font-bold uppercase tracking-wider text-sm transition hover:bg-orange-50 shadow"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              href="/properties-investment"
-              id="about-cta-guidelines"
-              className="inline-block border border-white/80 hover:bg-white/10 text-white px-8 py-4 rounded font-bold uppercase tracking-wider text-sm transition"
-            >
-              Building Guidelines
-            </Link>
+      <section className="bg-[#f8f8f8] py-20 sm:py-24">
+        <div className="mx-auto grid max-w-[1140px] gap-12 px-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold text-[#8f6048]">Location and connectivity</p>
+            <h2 className="mt-3 text-3xl font-bold text-[#202124] sm:text-[2.75rem]">Close to the places that matter.</h2>
+            <p className="mt-5 leading-7 text-[#606261]">Orange Island is approximately one kilometre from Lekki Phase 1, with access through Freedom Way and onward connections to the Lekki-Ikoyi Link Bridge and Lekki-Epe Expressway.</p>
+            <p className="mt-4 leading-7 text-[#606261]">Shopping, dining and leisure destinations along Admiralty Way remain within easy reach.</p>
           </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-[10px] border border-[#dce0e5] bg-white">
+            <Image src="/images/orange_location-2048x1157.jpg" alt="Orange Island location map" fill className="object-cover" sizes="(min-width: 1024px) 60vw, 100vw" />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mx-auto flex max-w-[1140px] flex-col gap-6 rounded-[10px] bg-[#f8f5f2] px-8 py-10 lg:flex-row lg:items-center lg:justify-between">
+          <div><h2 className="text-2xl font-bold text-[#202124] sm:text-3xl">Explore life on Orange Island.</h2><p className="mt-2 text-[#606261]">Speak with our team about the development and available opportunities.</p></div>
+          <Link href="/contact" className="inline-flex shrink-0 justify-center rounded-[5px] bg-[#202124] px-6 py-3 text-sm font-semibold text-white hover:bg-[#3e403f]">Contact our team</Link>
         </div>
       </section>
     </div>

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Physical Planning Document - Orange Island Lagos',
@@ -97,7 +96,7 @@ export default function PhysicalPlanningPage() {
             <h5 className="font-bold text-gray-900 mb-2 text-sm tracking-wide">Review Outcome</h5>
             <p className="text-gray-600 text-sm mb-2">Once approved by Orange Island:</p>
             <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-              <li>You will receive a Concept Approval Letter (Stamped "ACCEPTED")</li>
+              <li>You will receive a Concept Approval Letter (Stamped &quot;ACCEPTED&quot;)</li>
               <li>You can then proceed to Lagos State approvals</li>
             </ul>
           </div>
@@ -183,7 +182,7 @@ export default function PhysicalPlanningPage() {
             <li>Structural indemnity letter</li>
             <li>Safety clearance</li>
             <li>Evidence of material testing (LSMTL)</li>
-            <li>Contractor's insurance</li>
+            <li>Contractor&apos;s insurance</li>
             <li>Method statement</li>
             <li>Project signage</li>
             <li>Functional site toilet</li>
@@ -211,10 +210,10 @@ export default function PhysicalPlanningPage() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-24">
+    <div className="reference-document min-h-screen bg-white pb-24 text-[#3e403f]">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="bg-[#f8f8f8] py-16 sm:py-20">
+        <div className="hidden">
           <Image
             src="/images/Header_Image.png"
             alt="Orange Island Building Guidelines"
@@ -223,21 +222,21 @@ export default function PhysicalPlanningPage() {
             priority
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+        <div className="mx-auto w-full max-w-[1140px] px-6 lg:px-8">
           <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
             Building Guidelines
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
+          <h1 className="max-w-4xl text-[2.75rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.6rem]">
             Physical Planning Document
           </h1>
-          <div className="w-16 h-1 bg-orange-500 rounded"></div>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#606261]">Planning requirements and development guidance for property owners and project teams.</p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
+      <section className="relative mx-auto max-w-[1300px] px-6 py-20 lg:px-8">
         
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 mb-12">
+        <div className="mb-12 border-b border-[#dce0e5] pb-10">
           <h2 className="text-sm font-bold tracking-widest text-orange-600 uppercase mb-3">
             Building Guidelines – Orange Island
           </h2>
@@ -250,11 +249,10 @@ export default function PhysicalPlanningPage() {
         </div>
 
         {/* Steps */}
-        <div className="space-y-8">
+        <div className="columns-1 gap-8 lg:columns-2">
           {steps.map((step) => (
-            <div key={step.id} className="bg-white rounded-xl shadow-sm border border-gray-150 overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-2 h-full bg-orange-500"></div>
-              <div className="p-8 pl-10">
+            <div key={step.id} className="relative mb-8 break-inside-avoid overflow-hidden rounded-[10px] border border-[#dce0e5] bg-white">
+              <div className="p-8">
                 <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold tracking-widest uppercase rounded mb-4">
                   {step.id}
                 </span>
@@ -266,7 +264,7 @@ export default function PhysicalPlanningPage() {
         </div>
 
         {/* Important Notes */}
-        <div className="mt-12 bg-gray-900 rounded-2xl p-10 text-white shadow-xl relative overflow-hidden">
+        <div className="relative mt-12 overflow-hidden rounded-[10px] bg-[#202124] p-10 text-white">
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
           
           <h4 className="text-2xl font-bold mb-6 flex items-center gap-3">

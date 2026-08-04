@@ -4,7 +4,7 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <footer className="bg-[#111820] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-white">Quick Links</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-[0.14em] mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/" id="footer-link-home" className="text-gray-400 hover:text-amber-400 transition text-sm">
@@ -57,22 +57,22 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-white">Contact Info</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-[0.14em] mb-6 text-white">Contact Info</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <EnvelopeIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
+                <EnvelopeIcon className="h-5 w-5 text-slate-300 mt-1" aria-hidden="true" />
                 <a href="mailto:hello@orangeislandng.com" id="footer-contact-email" className="text-gray-400 hover:text-amber-400 transition">
                   hello@orangeislandng.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <PhoneIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
+                <PhoneIcon className="h-5 w-5 text-slate-300 mt-1" aria-hidden="true" />
                 <a href="tel:+2348132992279" id="footer-contact-phone" className="text-gray-400 hover:text-amber-400 transition">
                   +234 813 299 2279
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPinIcon className="h-5 w-5 text-amber-400 mt-1" aria-hidden="true" />
+                <MapPinIcon className="h-5 w-5 text-slate-300 mt-1" aria-hidden="true" />
                 <span className="text-gray-400 leading-relaxed">
                   Orange Island Development Company,<br />
                   On Oba Ademola Elegushi Boulevard,<br />
@@ -85,16 +85,16 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-white">Stay Updated</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-[0.14em] mb-6 text-white">Stay Updated</h4>
             <p className="text-gray-400 mb-4 text-sm font-light">Subscribe to get the latest updates about Orange Island</p>
             <div className="flex gap-2">
               <input
                 type="email"
                 id="footer-newsletter-email"
                 placeholder="Your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 text-sm"
+                className="flex-1 px-4 py-2.5 rounded-md border border-white/15 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white/50 text-sm"
               />
-              <button id="footer-newsletter-submit" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-4 py-2 rounded-lg font-semibold transition cursor-pointer">
+              <button id="footer-newsletter-submit" className="bg-white hover:bg-slate-100 text-slate-950 px-4 py-2 rounded-md font-semibold transition cursor-pointer">
                 →
               </button>
             </div>

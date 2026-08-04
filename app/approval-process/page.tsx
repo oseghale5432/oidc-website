@@ -61,10 +61,10 @@ export default function ApprovalProcessPage() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-24">
+    <div className="reference-document min-h-screen bg-white pb-24 text-[#3e403f]">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="bg-[#f8f8f8] py-16 sm:py-20">
+        <div className="hidden">
           <Image
             src="/images/Header_Image.png"
             alt="Orange Island Building Guidelines"
@@ -73,21 +73,21 @@ export default function ApprovalProcessPage() {
             priority
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+        <div className="mx-auto w-full max-w-[1140px] px-6 lg:px-8">
           <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
             Building Guidelines
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
+          <h1 className="max-w-4xl text-[2.75rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.6rem]">
             Approval Process
           </h1>
-          <div className="w-16 h-1 bg-orange-500 rounded"></div>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#606261]">Responsibilities, documentation and decisions required before, during and after construction.</p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="p-10 md:p-14 text-center border-b border-gray-100">
+      <section className="relative mx-auto max-w-[1300px] px-6 py-20 lg:px-8">
+        <div className="overflow-hidden rounded-[10px] border border-[#dce0e5] bg-white">
+          <div className="border-b border-[#dce0e5] p-10 text-left md:p-12">
             <h2 className="text-sm font-bold tracking-widest text-orange-600 uppercase mb-3">
               Requirements for Construction
             </h2>
@@ -99,20 +99,20 @@ export default function ApprovalProcessPage() {
             </p>
           </div>
 
-          <div className="p-6 md:p-10 bg-gray-50/50">
-            <div className="flex flex-col gap-12">
-              {stages.map((stage, index) => (
-                <div key={stage.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-[#f8f8f8] p-6 md:p-10">
+            <div className="grid gap-8 lg:grid-cols-3">
+              {stages.map((stage) => (
+                <div key={stage.id} className="overflow-hidden rounded-[10px] border border-[#dce0e5] bg-white">
                   {/* Stage Header */}
-                  <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-8 py-5 flex items-center gap-4">
-                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 font-bold text-xl backdrop-blur-sm">
+                  <div className="flex items-center gap-4 border-b border-[#dce0e5] bg-white px-8 py-5 text-[#202124]">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d6f2fb] text-xl font-bold text-[#247fa8]">
                       {stage.id}
                     </span>
                     <h4 className="text-xl font-bold tracking-wide">{stage.title}</h4>
                   </div>
 
                   {/* Stage Details Split */}
-                  <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                  <div className="grid divide-y divide-gray-100">
                     
                     {/* OIDC Column */}
                     <div className="p-8">
@@ -159,7 +159,7 @@ export default function ApprovalProcessPage() {
           <div className="flex justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-4 rounded uppercase tracking-wider text-sm transition duration-300 shadow hover:shadow-md"
+            className="rounded-[5px] bg-[#202124] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#3e403f]"
             >
               Contact Town Planning
             </Link>

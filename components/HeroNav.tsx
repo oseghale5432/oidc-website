@@ -13,6 +13,14 @@ export default function HeroNav() {
     <>
       {/* ─── DESKTOP: navigation ─────────────────────────── */}
       <nav className="absolute top-0 left-0 w-full z-50 hidden md:flex items-center justify-between px-10 py-7">
+        <Image
+          src="/images/proudly-nigerian.png"
+          alt="Proudly Nigerian"
+          width={110}
+          height={110}
+          className="pointer-events-none absolute right-8 top-4 h-auto w-24 opacity-90 drop-shadow-md"
+          priority
+        />
         
         {/* LOGO LEFT (matching reference site) */}
         <Link href="/" className="flex-shrink-0">
@@ -21,7 +29,7 @@ export default function HeroNav() {
             alt="Logo"
             width={190}
             height={60}
-            className="h-12 w-auto object-contain opacity-0" // hidden but takes up space to center the rest properly
+            className="h-11 w-auto object-contain"
             priority
           />
         </Link>
@@ -36,7 +44,7 @@ export default function HeroNav() {
             </button>
 
             <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-              <div className="bg-[#9C3317]/95 backdrop-blur-md border border-white/20 shadow-xl rounded-md py-2 relative mt-1">
+              <div className="bg-slate-950/95 backdrop-blur-md border border-white/15 shadow-xl rounded-md py-2 relative mt-1">
                 {/* Invisible bridge for hover gap */}
                 <div className="absolute -top-4 left-0 w-full h-4"></div>
                 <Link href="/about" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
@@ -57,7 +65,7 @@ export default function HeroNav() {
             </button>
 
             <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-              <div className="bg-[#9C3317]/95 backdrop-blur-md border border-white/20 shadow-xl rounded-md py-2 relative mt-1">
+              <div className="bg-slate-950/95 backdrop-blur-md border border-white/15 shadow-xl rounded-md py-2 relative mt-1">
                 {/* Invisible bridge for hover gap */}
                 <div className="absolute -top-4 left-0 w-full h-4"></div>
                 <Link href="/physical-planning-document" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
@@ -81,7 +89,7 @@ export default function HeroNav() {
             </button>
 
             <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-              <div className="bg-[#9C3317]/95 backdrop-blur-md border border-white/20 shadow-xl rounded-md py-2 relative mt-1">
+              <div className="bg-slate-950/95 backdrop-blur-md border border-white/15 shadow-xl rounded-md py-2 relative mt-1">
                 {/* Invisible bridge for hover gap */}
                 <div className="absolute -top-4 left-0 w-full h-4"></div>
                 <Link href="/water" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
@@ -92,6 +100,9 @@ export default function HeroNav() {
                 </Link>
                 <Link href="/sewage-management" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
                   Sewage Management
+                </Link>
+                <Link href="/waste-collection" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
+                  Waste Collection
                 </Link>
               </div>
             </div>
@@ -131,7 +142,7 @@ export default function HeroNav() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="absolute top-16 left-0 w-full z-40 bg-[#7a2d1f]/95 backdrop-blur-sm md:hidden max-h-[85vh] overflow-y-auto border-t border-white/10">
+        <div className="absolute top-16 left-0 w-full z-40 bg-slate-950/95 backdrop-blur-sm md:hidden max-h-[85vh] overflow-y-auto border-t border-white/10">
           <div className="flex flex-col px-8 py-8 gap-6 text-left">
             
             {/* COMPANY */}
@@ -175,6 +186,7 @@ export default function HeroNav() {
                 <Link href="/water" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Water</Link>
                 <Link href="/electricity" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Electricity</Link>
                 <Link href="/sewage-management" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Sewage Management</Link>
+                <Link href="/waste-collection" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Waste Collection</Link>
               </div>
             )}
 
