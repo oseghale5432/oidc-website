@@ -57,46 +57,48 @@ const initialEvents: Event[] = dbJson.events as Event[];
 
 // Helper: Ensure the data directory and db file exist
 export function initializeDatabase() {
-  const dir = path.dirname(DB_PATH);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-
-  if (!fs.existsSync(DB_PATH)) {
-    const defaultData: DatabaseSchema = {
-      blogPosts: initialBlogPosts,
-      projects: initialProjects,
-      events: initialEvents,
-      contactSubmissions: [],
-    };
-    fs.writeFileSync(DB_PATH, JSON.stringify(defaultData, null, 2), 'utf-8');
-    console.log('Database initialized with local seed file');
-  } else {
-    // Check if database exists but events are missing/empty
-    try {
-      const content = fs.readFileSync(DB_PATH, 'utf-8');
-      const data = JSON.parse(content) as DatabaseSchema;
-      if (!data.events || data.events.length === 0) {
-        data.events = initialEvents;
-        fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
-        console.log('Events seeded into existing database');
-      }
-    } catch (e) {
-      console.error('Error post-seeding database events:', e);
+  try {
+    const dir = path.dirname(DB_PATH);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
     }
+
+    if (!fs.existsSync(DB_PATH)) {
+      const defaultData: DatabaseSchema = {
+        blogPosts: initialBlogPosts,
+        projects: initialProjects,
+        events: initialEvents,
+        contactSubmissions: [],
+      };
+      fs.writeFileSync(DB_PATH, JSON.stringify(defaultData, null, 2), 'utf-8');
+      console.log('Database initialized with local seed file');
+    }
+  } catch (e) {
+    console.warn('Database initialization skipped (read-only filesystem or serverless context)');
   }
 }
 
 // Helper: Load database state from disk
 function loadDb(): DatabaseSchema {
-  initializeDatabase();
   try {
-    const content = fs.readFileSync(DB_PATH, 'utf-8');
-    return JSON.parse(content) as DatabaseSchema;
+    const tmpDbPath = path.join('/tmp', 'db.json');
+    if (fs.existsSync(tmpDbPath)) {
+      const content = fs.readFileSync(tmpDbPath, 'utf-8');
+      return JSON.parse(content) as DatabaseSchema;
+    }
+    if (fs.existsSync(DB_PATH)) {
+      const content = fs.readFileSync(DB_PATH, 'utf-8');
+      return JSON.parse(content) as DatabaseSchema;
+    }
   } catch (error) {
-    console.error('Error reading database file, returning empty schema:', error);
-    return { blogPosts: [], projects: [], events: [], contactSubmissions: [] };
+    console.warn('Error reading database file from disk, using imported seed data:', error);
   }
+  return {
+    blogPosts: initialBlogPosts,
+    projects: initialProjects,
+    events: initialEvents,
+    contactSubmissions: (dbJson as unknown as DatabaseSchema).contactSubmissions || [],
+  };
 }
 
 // Helper: Save database state back to disk atomically
@@ -106,7 +108,13 @@ function saveDb(data: DatabaseSchema) {
     fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
     fs.renameSync(tempPath, DB_PATH);
   } catch (error) {
-    console.error('Failed to write database file:', error);
+    console.warn('Primary DB write failed, attempting serverless /tmp write:', error);
+    try {
+      const tmpDbPath = path.join('/tmp', 'db.json');
+      fs.writeFileSync(tmpDbPath, JSON.stringify(data, null, 2), 'utf-8');
+    } catch (e) {
+      console.error('Failed to write to /tmp in serverless environment:', e);
+    }
   }
 }
 

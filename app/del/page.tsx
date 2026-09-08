@@ -14,12 +14,11 @@ export default function DelPage() {
       <section className="relative h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://orange.bizev.net/wp-content/uploads/2026/04/solutions-section-image-1024x683.webp"
+            src="/images/del_energy.png"
             alt="DEL Energy Infrastructure"
             fill
             className="object-cover brightness-[0.4]"
             priority
-            unoptimized
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">

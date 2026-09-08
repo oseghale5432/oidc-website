@@ -143,8 +143,8 @@ export default async function Home() {
             <>
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {events.slice(0, 4).map((event) => (
-                  <div key={event.id} className="group overflow-hidden rounded-xl bg-white">
-                    <div className="relative h-96 overflow-hidden bg-gray-100">
+                  <div key={event.id} className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                    <div className="relative h-[430px] overflow-hidden bg-slate-900">
                       <Image
                         src={event.image}
                         alt={event.title}
@@ -152,6 +152,10 @@ export default async function Home() {
                         className="object-cover transition duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 25vw"
                       />
+                    </div>
+                    <div className="p-4 bg-white border-t border-gray-100">
+                      <h3 className="font-bold text-gray-900 text-base truncate">{event.title}</h3>
+                      <p className="text-xs text-orange-600 font-semibold mt-1">{event.date}</p>
                     </div>
                   </div>
                 ))}
