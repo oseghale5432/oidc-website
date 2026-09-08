@@ -51,7 +51,8 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       }
     `);
 
-    return posts?.filter((post) => post.title && post.slug) ?? getSeedBlogPosts();
+    const validPosts = posts?.filter((post) => post.title && post.slug);
+    return validPosts && validPosts.length > 0 ? validPosts : getSeedBlogPosts();
   } catch (error) {
     console.error('Falling back to seeded blog posts:', error);
     return getSeedBlogPosts();
@@ -60,19 +61,6 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
   try {
-    const post = await sanityQuery<BlogPost>(`
-      *[_type == "blogPost" && slug.current == $slug][0] {
-        "id": _id,
-        title,
-        "slug": slug.current,
-        excerpt,
-        content,
-        date,
-        "createdAt": _createdAt,
-        "image": image.asset->url
-      }
-    `,); // Note: For standard URL query we format it, but since URL params are simple we can inject it safely as slug is an alpha-numeric slug string, or just query all and filter, or use raw string query
-    // Let's do raw string injection for sanity query since this is a simple query and slug is safe:
     const posts = await sanityQuery<BlogPost[]>(`
       *[_type == "blogPost" && slug.current == "${slug}"] {
         "id": _id,
@@ -109,7 +97,8 @@ export async function getProjects(): Promise<Project[]> {
       }
     `);
 
-    return projects?.filter((project) => project.title && project.image) ?? getSeedProjects();
+    const validProjects = projects?.filter((project) => project.title && project.image);
+    return validProjects && validProjects.length > 0 ? validProjects : getSeedProjects();
   } catch (error) {
     console.error('Falling back to seeded projects:', error);
     return getSeedProjects();
@@ -129,7 +118,8 @@ export async function getEvents(): Promise<Event[]> {
       }
     `);
 
-    return events?.filter((event) => event.title) ?? getSeedEvents();
+    const validEvents = events?.filter((event) => event.title && event.image);
+    return validEvents && validEvents.length > 0 ? validEvents : getSeedEvents();
   } catch (error) {
     console.error('Falling back to seeded events:', error);
     return getSeedEvents();
