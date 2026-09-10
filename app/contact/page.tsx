@@ -17,7 +17,7 @@ export default function ContactPage() {
     },
     {
       q: 'What utilities are fully operational on Orange Island?',
-      a: 'Orange Island features state-of-the-art smart utilities including a decentralized clean water filtration system, hybrid underground electricity grid managed by Decentralized Energy Limited (DEL), and centralized waste and sewage management systems.'
+      a: 'Orange Island features modern centralized utilities including a central water treatment plant providing 24/7 clean potable water, an electricity network powered by EKEDC with IPP integration and standby backup, a state-of-the-art centralised vacuum sewage system, and scheduled weekly waste collection.'
     },
     {
       q: 'How is security managed for residents and visitors?',

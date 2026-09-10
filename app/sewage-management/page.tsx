@@ -1,12 +1,29 @@
 import type { Metadata } from 'next';
 import UtilityPage from '@/components/UtilityPage';
 
-export const metadata: Metadata = { title: 'Sewage Management - Orange Island Lagos', description: 'Learn about the centralised vacuum sewage network on Orange Island Lagos.' };
+export const metadata: Metadata = {
+  title: 'Sewage Management - Orange Island Lagos',
+  description: 'Learn about the state-of-the-art centralised vacuum sewage system on Orange Island Lagos.',
+};
 
 export default function SewagePage() {
-  return <UtilityPage name="Sewage Management" eyebrow="A central vacuum network designed for clean, efficient operation." headline="Wastewater management built into the island." introduction="Orange Island's central vacuum sewage network transports wastewater through sealed pipes under controlled pressure, helping contain odour, reduce leakage risk and simplify long-term maintenance." image="/images/sewage.jpg" imageAlt="Sewage management infrastructure" facts={[["System", "Central vacuum network"], ["Transport", "Sealed pipework"], ["Operation", "Centrally managed"]]} sections={[
-    { title: 'Collection', description: 'Wastewater enters a closed network through property connection points.', points: ['Contained access points', 'Reduced exposed infrastructure'] },
-    { title: 'Transport', description: 'Vacuum pressure moves wastewater efficiently through sealed underground pipes.', points: ['Reduced leakage risk', 'Improved odour control'] },
-    { title: 'Management', description: 'Central oversight supports maintenance and reliable long-term operation.', points: ['Coordinated servicing', 'Purpose-built infrastructure'] },
-  ]} noteTitle="Partner network" note="The vacuum sewage system is delivered in partnership with Aqseptance Group (Germany) and Roelag Environmental Services Ltd, supporting modern design and managed operation." ctaTitle="Need sewage connection support?" ctaText="Contact the facilities team for connection coordination, access requirements or service questions." />;
+  return (
+    <UtilityPage
+      name="Sewage Management"
+      eyebrow="State-of-the-art centralised vacuum system designed for clean, efficient wastewater management."
+      headline="Centralised Vacuum Sewage System"
+      introduction="Our sewage management system features a state-of-the-art centralised vacuum system, designed to efficiently handle all wastewater across the island. We are currently facilitating connections from residents' internal sewage systems to the central vacuum network. Please reach out to our facilities team to coordinate your connection."
+      image="/images/sewage.jpg"
+      imageAlt="Sewage management infrastructure on Orange Island"
+      facts={[
+        ['System Type', 'Centralised Vacuum Network'],
+        ['Coverage', 'Island-wide Wastewater'],
+        ['Connection Status', 'Facilitating Resident Connections'],
+      ]}
+      noteTitle="Coordinating Your Connection"
+      note="We are currently facilitating connections from residents' internal sewage systems to the central vacuum network. Please reach out to our facilities team to coordinate your connection."
+      ctaTitle="Need sewage connection support?"
+      ctaText="Contact our facilities team directly to coordinate connection timing, technical requirements, or service questions."
+    />
+  );
 }

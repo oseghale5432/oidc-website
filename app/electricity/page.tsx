@@ -1,12 +1,29 @@
 import type { Metadata } from 'next';
 import UtilityPage from '@/components/UtilityPage';
 
-export const metadata: Metadata = { title: 'Electricity Utilities - Orange Island Lagos', description: 'Understand the electricity grid and energy mix on Orange Island Lagos.' };
+export const metadata: Metadata = {
+  title: 'Electricity Utilities - Orange Island Lagos',
+  description: 'Understand the electricity grid, IPP integration, standby generators, and solar advisory on Orange Island Lagos.',
+};
 
 export default function ElectricityPage() {
-  return <UtilityPage name="Electricity" eyebrow="Reliable power infrastructure with backup readiness." headline="Power planned for reliability and growth." introduction="Orange Island connects residents to EKEDC supply, supported by dedicated backup capacity and a solar-ready strategy that creates a practical path toward cleaner, more resilient energy." image="/images/electricity.jpg" imageAlt="Electricity infrastructure on Orange Island" facts={[["Primary source", "EKEDC grid"], ["Backup", "Standby generators"], ["Future ready", "Solar strategy"]]} sections={[
-    { title: 'Grid supply', description: 'The primary electricity supply is provided through planned EKEDC distribution.', points: ['Coordinated island distribution', 'Managed resident connections'] },
-    { title: 'Backup capacity', description: 'Dedicated standby generation supports continuity during interruptions to local supply.', points: ['Layered power resilience', 'Faster service recovery'] },
-    { title: 'Energy transition', description: 'The network is designed to accommodate future solar and cleaner energy solutions.', points: ['Solar-ready planning', 'Long-term efficiency'] },
-  ]} noteTitle="Resident support" note="Residents receive guidance for meter connections, service requests and energy efficiency. Connection work should be coordinated with the utilities team before occupation." ctaTitle="Planning an electricity connection?" ctaText="Contact the utilities team for metering, onboarding and service-support information." />;
+  return (
+    <UtilityPage
+      name="Electricity"
+      eyebrow="Reliable power infrastructure with EKEDC supply, IPP integration, and emergency backup."
+      headline="Electricity Supply & Resilience"
+      introduction="The primary source of power on Orange Island is EKEDC, providing approximately 20 hours of electricity supply daily. To complement this, we have integrated with an Independent Power Producer (IPP) to enhance our energy resilience and long-term sustainability. Backup generators are also on standby for emergency situations. We strongly advise all residents to install solar connections in their homes as an additional and reliable alternative power source."
+      image="/images/electricity.jpg"
+      imageAlt="Electricity infrastructure on Orange Island"
+      facts={[
+        ['Primary Source', 'EKEDC (~20 Hours Daily)'],
+        ['Resilience Partner', 'Independent Power Producer (IPP)'],
+        ['Emergency Backup', 'Standby Generators'],
+      ]}
+      noteTitle="Solar Energy Advisory"
+      note="We strongly advise all residents to install solar connections in their homes as an additional and reliable alternative power source."
+      ctaTitle="Planning an electricity connection?"
+      ctaText="Contact our facilities and utilities team for metering, connection onboarding, and service support."
+    />
+  );
 }

@@ -19,15 +19,15 @@ export default async function Home() {
       {/* ── HERO SECTION ── */}
       <section className="relative min-h-[760px] w-full overflow-hidden bg-slate-950 text-white">
         <Image
-          src="/images/orange-island-2048x1157.jpg"
-          alt="Aerial view of Orange Island and the Lagos waterfront"
+          src="/images/landing-header.jpg"
+          alt="Orange Island Lagos waterfront community rendering"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/55 to-slate-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-slate-950/20" />
 
         {/* ── AMBIENT LIGHTING LAYERS ── */}
         <div className="hidden">
@@ -54,12 +54,7 @@ export default async function Home() {
         <div className="relative z-20 mx-auto flex min-h-[760px] max-w-7xl items-center px-6 pb-20 pt-32 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/75">A waterfront community in Lagos</p>
-            <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
-              Thoughtfully planned.<br />Built for generations.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
-              Orange Island brings together secure waterfront living, resilient infrastructure and responsible urban planning in the heart of Lagos.
-            </p>
+
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/about" className="inline-flex items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">Discover Orange Island</Link>
               <Link href="/contact" className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Contact our team</Link>

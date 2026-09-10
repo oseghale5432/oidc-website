@@ -48,6 +48,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/utilities" id="footer-link-utilities" className="text-gray-400 hover:text-amber-400 transition text-sm">
+                  Utilities
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" id="footer-link-contact" className="text-gray-400 hover:text-amber-400 transition text-sm">
                   Contact
                 </Link>
