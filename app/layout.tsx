@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Inter } from "next/font/google";
+import { EB_Garamond, Instrument_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import GlobalHeader from "@/components/GlobalHeader";
@@ -11,6 +11,11 @@ const inter = Inter({
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
+  subsets: ["latin"],
+});
+
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
 });
 
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSans.variable} h-full antialiased`}
+      className={`${inter.variable} ${instrumentSans.variable} ${ebGaramond.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <GlobalHeader />
