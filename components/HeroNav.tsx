@@ -92,19 +92,16 @@ export default function HeroNav() {
               <div className="bg-slate-950/95 backdrop-blur-md border border-white/15 shadow-xl rounded-md py-2 relative mt-1">
                 {/* Invisible bridge for hover gap */}
                 <div className="absolute -top-4 left-0 w-full h-4"></div>
-                <Link href="/utilities" className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white font-medium border-b border-white/10">
-                  Overview
-                </Link>
-                <Link href="/water" className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white">
+                <Link href="/water" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
                   Water
                 </Link>
-                <Link href="/electricity" className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white">
+                <Link href="/electricity" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
                   Electricity
                 </Link>
-                <Link href="/sewage-management" className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white">
+                <Link href="/sewage-management" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
                   Sewage Management
                 </Link>
-                <Link href="/waste-collection" className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white">
+                <Link href="/waste-collection" className="block px-5 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white">
                   Waste Collection
                 </Link>
               </div>
@@ -186,7 +183,6 @@ export default function HeroNav() {
             </button>
             {utilitiesOpen && (
               <div className="pl-4 border-l border-white/30 flex flex-col gap-3">
-                <Link href="/utilities" className="text-white font-medium text-sm" onClick={() => setMobileOpen(false)}>Overview</Link>
                 <Link href="/water" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Water</Link>
                 <Link href="/electricity" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Electricity</Link>
                 <Link href="/sewage-management" className="text-white/80 hover:text-white text-sm" onClick={() => setMobileOpen(false)}>Sewage Management</Link>

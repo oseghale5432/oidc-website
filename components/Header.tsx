@@ -108,19 +108,16 @@ export default function Header() {
               <div className="bg-white border border-gray-100 shadow-xl rounded-md py-2 relative mt-1">
                 {/* Invisible bridge for hover gap */}
                 <div className="absolute -top-4 left-0 w-full h-4"></div>
-                <Link href="/utilities" className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500 font-medium border-b border-gray-100">
-                  Overview
-                </Link>
-                <Link href="/water" className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                <Link href="/water" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Water
                 </Link>
-                <Link href="/electricity" className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                <Link href="/electricity" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Electricity
                 </Link>
-                <Link href="/sewage-management" className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                <Link href="/sewage-management" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Sewage Management
                 </Link>
-                <Link href="/waste-collection" className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
+                <Link href="/waste-collection" className="block px-5 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500">
                   Waste Collection
                 </Link>
               </div>
@@ -201,7 +198,6 @@ export default function Header() {
             </button>
             {utilitiesOpen && (
               <div className="pl-4 border-l border-orange-400 flex flex-col gap-3">
-                <Link href="/utilities" className="font-semibold text-gray-900 text-sm" onClick={() => setMobileOpen(false)}>Overview</Link>
                 <Link href="/water" onClick={() => setMobileOpen(false)}>Water</Link>
                 <Link href="/electricity" onClick={() => setMobileOpen(false)}>Electricity</Link>
                 <Link href="/sewage-management" onClick={() => setMobileOpen(false)}>Sewage Management</Link>
