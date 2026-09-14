@@ -39,7 +39,7 @@ export default async function Home() {
         <div className="relative z-20 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:pt-44 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-white/80">
-              The Experience
+
             </p>
 
             <h1 className="mt-5 text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.08]">
@@ -47,11 +47,11 @@ export default async function Home() {
               to Orange Island.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl font-light leading-relaxed text-white/90">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
               Orange Island brings together secure waterfront living, resilient infrastructure and responsible urban planning in the heart of Lagos.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/about"
                 className="inline-flex items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 shadow-sm"
@@ -60,7 +60,7 @@ export default async function Home() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md border border-white/50 bg-black/20 backdrop-blur-xs px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15"
+                className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Contact our team
               </Link>

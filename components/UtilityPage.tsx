@@ -41,7 +41,6 @@ export default function UtilityPage({
       <section className="bg-[#f8f8f8] py-16 sm:py-20">
         <div className="mx-auto grid max-w-[1300px] gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div className="max-w-xl">
-            <p className="mb-4 text-sm font-semibold text-[#8f6048]">Orange Island · Utilities &amp; Services</p>
             <h1 className="text-[2.75rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.6rem]">{name}</h1>
             <p className="mt-5 text-lg leading-8 text-[#606261]">{eyebrow}</p>
           </div>
