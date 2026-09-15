@@ -173,9 +173,9 @@ export default function About() {
       </section>
 
       {/* ── LOCATION & CONNECTIVITY SECTION ── */}
-      <section className="bg-[#f8f8f8] py-20 sm:py-24 border-t border-[#eaeaea]">
-        <div className="mx-auto grid max-w-[1140px] gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16 lg:px-8">
-          <div>
+      <section className="bg-[#f8f8f8] py-20 sm:py-28 border-t border-[#eaeaea]">
+        <div className="mx-auto grid max-w-[1360px] gap-10 px-6 lg:grid-cols-12 lg:items-center lg:gap-14 lg:px-8">
+          <div className="lg:col-span-5 xl:col-span-4">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block mb-2">Location & Access</span>
             <h2 className="text-3xl font-bold text-[#202124] sm:text-[2.5rem] leading-tight">
               Located Close to the Places That Matter
@@ -187,14 +187,17 @@ export default function About() {
               It is minutes from the shopping and leisure destinations along Admiralty Way.
             </p>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[12px] border border-[#dce0e5] bg-white shadow-md">
-            <Image
-              src="/images/orange_location-2048x1157.jpg"
-              alt="Orange Island Location and Access Map"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 60vw, 100vw"
-            />
+          <div className="lg:col-span-7 xl:col-span-8">
+            <div className="relative aspect-[16/10] min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] w-full overflow-hidden rounded-[16px] border border-[#dce0e5] bg-white shadow-xl">
+              <Image
+                src="/images/orange_location-2048x1157.jpg"
+                alt="Orange Island Location and Access Map"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1280px) 68vw, (min-width: 1024px) 58vw, 100vw"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
