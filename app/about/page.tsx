@@ -72,9 +72,7 @@ export default function About() {
               <p>
                 The Lagos State Government’s aspiration is to transform Lagos into an organised smart city which makes use of resources and services both tactically and efficiently.
               </p>
-              <p>
-                Orange Island is poised to be a leading example of a stylish lifestyle with a strong sense of community, with security and safety central to its vision.
-              </p>
+
             </div>
           </div>
 
