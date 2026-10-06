@@ -56,7 +56,7 @@ export default async function Home() {
                 href="/about"
                 className="inline-flex items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 shadow-sm"
               >
-                Experience Orange Island
+                Our Vision
               </Link>
               <Link
                 href="/contact"
