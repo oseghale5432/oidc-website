@@ -28,7 +28,7 @@
       "content": "\n<h3 class=\"wp-block-heading\" style=\"padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)\">Orange Island &amp; Decentralized Energy Limited (DEL)</h3>\n\n\n\n<p>We are pleased to announce our partnership with Decentralized Energy Limited (DEL), a company committed to transforming how energy is delivered across Nigeria.</p>\n\n\n\n<p>At DEL, the belief is simple, Nigeria does not lack energy; the challenge lies in the infrastructure and execution needed to make it accessible. Through this partnership, DEL will bring cleaner, more reliable, and affordable power solutions to Orange Island, ensuring residents enjoy uninterrupted energy for everyday living.</p>\n\n\n\n<p>Driven by a mission to make consistent and sustainable power a reality across Nigeria and West Africa, DEL operates on strong principles that guide how every project is planned, built, and managed.</p>\n\n\n\n<figure class=\"wp-block-image size-full is-resized project-logo\"><img loading=\"lazy\" decoding=\"async\" width=\"780\" height=\"320\" src=\"https://orange.bizev.net/wp-content/uploads/2026/04/del.png\" alt=\"\" class=\"wp-image-1281\" style=\"width:448px\" srcset=\"https://orange.bizev.net/wp-content/uploads/2026/04/del.png 780w, https://orange.bizev.net/wp-content/uploads/2026/04/del-300x123.png 300w, https://orange.bizev.net/wp-content/uploads/2026/04/del-768x315.png 768w\" sizes=\"auto, (max-width: 780px) 100vw, 780px\" /></figure>\n",
       "date": "2026-04-02",
       "createdAt": "2026-04-02T20:29:06.000Z",
-      "image": "/images/del_energy.png"
+      "image": "/images/del_energy.jpg"
     },
     {
       "id": 1913,
@@ -106,7 +106,7 @@
       "id": 1,
       "title": "Decentralized Energy Limited (DEL)",
       "description": "DEL a company committed to transforming how energy is delivered",
-      "image": "/images/del_energy.png",
+      "image": "/images/del_energy.jpg",
       "href": "/del",
       "createdAt": "2026-06-02T09:12:56.242Z"
     },

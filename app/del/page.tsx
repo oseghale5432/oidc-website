@@ -11,15 +11,16 @@ export default function DelPage() {
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/del_energy.png"
-            alt="DEL Energy Infrastructure"
+            src="/images/del_energy.jpg"
+            alt="Decentralized Energy Limited (DEL) Infrastructure"
             fill
-            className="object-cover brightness-[0.4]"
+            className="object-cover object-center"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-slate-950/30" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
           <span className="text-amber-400 font-bold uppercase tracking-widest text-sm block mb-3">
