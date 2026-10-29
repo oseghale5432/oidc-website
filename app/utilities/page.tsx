@@ -97,7 +97,7 @@ export default function UtilitiesPage() {
       <section id="connectivity" style={{ paddingTop: "72px", paddingBottom: "72px" }}>
         <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "center" }}>
           <div style={{ flex: "1 1 440px", minWidth: "0", height: "360px", background: "#E6ECEF", display: "flex", alignItems: "flex-end", padding: "16px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-            <Image src="/images/intercontra_telecom.jpg" alt="Telecoms installation on Orange Island" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+            <Image src="/images/MTN.jpg" alt="MTN network equipment" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
           </div>
           <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "18px" }}>
             <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>CONNECTIVITY</span>

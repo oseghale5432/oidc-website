@@ -111,7 +111,17 @@ caption, figcaption, .caption, .font-caption, .font-secondary, .font-serif {
 .g6 { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
 .tpl-about .g4 { gap: 20px; }
 .tile:hover { border-color: #A9481A !important; }
+.main-nav { display: flex; }
 .main-nav a:hover { color: #A9481A !important; }
+.menu-btn { display: none; }
+@media (max-width: 900px) {
+  .main-nav { display: none; }
+  .menu-btn { display: inline-flex; }
+  .audience-nav { display: none !important; }
+}
+@media (min-width: 901px) {
+  .mobile-menu { display: none; }
+}
 
 @media (max-width: 1000px) {
   .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -129,7 +129,7 @@ export default async function Home() {
           </article>
           <article style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <div style={{ height: "300px", background: "#E6ECEF", display: "flex", alignItems: "flex-end", padding: "16px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-              <Image src="/images/intercontra_telecom.jpg" alt="Telecoms installation on Orange Island" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src="/images/MTN.jpg" alt="MTN network equipment" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
             <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>CONNECTIVITY</span>
             <h3 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "36px", lineHeight: 1.1 }}>Connected to MTN</h3>
