@@ -1,228 +1,239 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBlogPosts, getProjects, getEvents } from '@/lib/content';
-import HeroNav from '@/components/HeroNav';
+import { getBlogPosts } from '@/lib/content';
+import HomeSearch from '@/components/site/HomeSearch';
+import NewsletterForm from '@/components/site/NewsletterForm';
 
 export const metadata: Metadata = {
   title: 'Orange Island Lagos - Secure Lakeside Living',
-  description: 'A planned island community in Lagos, Nigeria. Experience calm waterfront living, secure access, and world-class infrastructure.',
+  description: 'A master planned community and forward-thinking neighbourhood on the Lagos Lagoon, now in its facilities and development stage.',
 };
 
 export default async function Home() {
-  const posts = await getBlogPosts();
-  const projects = await getProjects();
-  const events = await getEvents();
+  const posts = (await getBlogPosts()).slice(0, 3);
 
   return (
-    <div className="bg-white">
-      {/* ── HERO SECTION ── */}
-      <section className="relative min-h-[760px] lg:min-h-[85vh] w-full overflow-hidden bg-slate-950 text-white flex flex-col justify-center">
-        <Image
-          src="/images/orange-island-2048x1157.jpg"
-          alt="Orange Island Lagos aerial perspective"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Soft dark gradient on left to maintain text legibility while revealing aerial labels on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/45 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/20" />
-
-        {/* ── NAVIGATION ── */}
-        <div className="absolute top-0 left-0 w-full z-30">
-          <HeroNav />
+    <div className="tpl tpl-home">
+      {/* service notice */}
+      <div style={{ background: "#FFF1E3", borderBottom: "1px solid #F1D2B4" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center", paddingTop: "12px", paddingBottom: "12px", fontSize: "15px" }}>
+          <span style={{ background: "#A9481A", color: "#FFFFFF", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "4px 10px", borderRadius: "2px" }}>SERVICE NOTICE</span>
+          {' '}
+          <span>Waste collection is every <strong>Thursday</strong>. Please place bins at your central collection point. Sewage network connections are now being scheduled — <Link href="/utilities">book yours</Link>.</span>
         </div>
-
-        {/* ── HERO CONTENT ── */}
-        <div className="relative z-20 mx-auto w-full max-w-7xl px-6 pb-20 pt-36 sm:pt-44 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-white/80">
-
-            </p>
-
-            <h1 className="mt-5 text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.08]">
-              Welcome<br />
-              to Orange Island.
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
-              Orange Island brings together secure waterfront living, resilient infrastructure and responsible urban planning in the heart of Lagos.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 shadow-sm"
-              >
-                Our Vision
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Contact our team
-              </Link>
+      </div>
+      {/* hero */}
+      <section style={{ background: "#0E2838", color: "#FFFFFF" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "center", paddingTop: "80px", paddingBottom: "80px" }}>
+          <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "24px" }}>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#F2A65A", fontWeight: 700 }}>NOW IN OUR FACILITIES &amp; DEVELOPMENT STAGE</span>
+            <h1 className="hero-h" style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "68px", lineHeight: 1.02 }}>Welcome to Orange Island</h1>
+            <p style={{ margin: "0", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "560px" }}>A master planned community and forward-thinking neighbourhood on the Lagos Lagoon. The island is reclaimed, serviced and in operation — now we are building the facilities and the community that will call it home.</p>
+            <HomeSearch />
+          </div>
+          <div style={{ flex: "1 1 420px", minWidth: "0", height: "420px", background: "#1E4256", border: "1px solid #2E5569", display: "flex", alignItems: "flex-end", padding: "20px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
+            <Image src="/images/orange-island-2048x1157.jpg" alt="Aerial view of Orange Island on the Lagos Lagoon" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+          </div>
+        </div>
+      </section>
+      {/* stage progress */}
+      <section style={{ background: "#FFFFFF", borderBottom: "1px solid #E5DED3" }}>
+        <div className="wrap" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+            <div style={{ flex: "1 1 200px", padding: "16px", borderTop: "4px solid #5E7D4E" }}>
+              <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#4A6A3C", fontWeight: 700 }}>COMPLETE</div>
+              <div style={{ fontWeight: 700, fontSize: "18px", marginTop: "4px" }}>Reclamation</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "4px" }}>150 hectares created on the Lagos Lagoon</div>
+            </div>
+            <div style={{ flex: "1 1 200px", padding: "16px", borderTop: "4px solid #5E7D4E" }}>
+              <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#4A6A3C", fontWeight: 700 }}>COMPLETE</div>
+              <div style={{ fontWeight: 700, fontSize: "18px", marginTop: "4px" }}>Infrastructure</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "4px" }}>Roads, drainage, water, sewage, lighting</div>
+            </div>
+            <div style={{ flex: "1 1 200px", padding: "16px", borderTop: "4px solid #5E7D4E" }}>
+              <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#4A6A3C", fontWeight: 700 }}>COMPLETE</div>
+              <div style={{ fontWeight: 700, fontSize: "18px", marginTop: "4px" }}>Sales &amp; operations</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "4px" }}>Plots allocated; estate services running</div>
+            </div>
+            <div style={{ flex: "1 1 200px", padding: "16px", borderTop: "4px solid #C9611F", background: "#FFF6EE" }}>
+              <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#A9481A", fontWeight: 700 }}>NOW</div>
+              <div style={{ fontWeight: 700, fontSize: "18px", marginTop: "4px" }}>Facilities &amp; development</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "4px" }}>Power, connectivity, homes and amenities</div>
             </div>
           </div>
         </div>
-
-        {/* ── BOTTOM FADE (soft grounding) ── */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
       </section>
-      {/* Projects Section */}
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Our development</p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-950 mb-6 tracking-tight">Projects</h2>
-            <p className="max-w-5xl text-xl leading-9 text-gray-800 font-light">
-              Experience the visionary projects and thoughtful developments bringing Orange Island to life, from smart infrastructure to vibrant, sustainable communities.
-            </p>
-          </div>
-
-          {projects.length === 0 ? (
-            <p className="text-center text-gray-500">No projects found.</p>
-          ) : (
-            <div className="grid gap-8 md:grid-cols-3">
-              {projects.map((project) => (
-                <a
-                  key={project.id}
-                  href={project.href}
-                  id={`home-project-link-${project.id}`}
-                  className="group overflow-hidden rounded-lg bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100"
-                >
-                  <div className="relative h-64 overflow-hidden bg-gray-200">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-7">
-                    <h3 className="mb-4 text-2xl font-bold leading-tight text-gray-900 group-hover:text-amber-800 transition">
-                      {project.title}
-                    </h3>
-                    <p className="text-base leading-6 text-gray-600 font-light">{project.description}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="bg-white py-20 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">Events</h2>
-            <p className="max-w-5xl text-xl leading-9 text-gray-600 font-light">
-              Orange Island hosts unforgettable events, blending leisure, culture, and community for everyone to enjoy fully.
-            </p>
-          </div>
-
-          {events.length === 0 ? (
-            <p className="text-center text-gray-500">No upcoming events scheduled.</p>
-          ) : (
-            <>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {events.slice(0, 4).map((event) => (
-                  <div key={event.id} className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
-                    <div className="relative h-[430px] overflow-hidden bg-slate-900">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                      />
-                    </div>
-                    <div className="p-4 bg-white border-t border-gray-100">
-                      <h3 className="font-bold text-gray-900 text-base truncate">{event.title}</h3>
-                      <p className="text-xs text-orange-600 font-semibold mt-1">{event.date}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <p className="text-lg text-gray-800 font-medium">
-                  Contact us to book your event.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-block mt-4 bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </>
-          )}
-        </div>
-      </section>
-
-      {/* News Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest News & Updates</h2>
-            <p className="text-xl text-gray-600 font-light">Stay informed about Orange Island&apos;s exciting developments</p>
-          </div>
-
-          {posts.length === 0 ? (
-            <p className="text-center text-gray-500">No news articles found.</p>
-          ) : (
-            <div className="grid md:grid-cols-2 gap-8">
-              {posts.slice(0, 4).map((post) => (
-                <Link key={post.id} href={`/blog/${post.slug}`} id={`home-news-link-${post.slug}`}>
-                  <article className="group bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-amber-400 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="inline-block bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">
-                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-amber-900 transition">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2 font-light">{post.excerpt}</p>
-                    <p className="text-amber-900 font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition">
-                      Read More <span>→</span>
-                    </p>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <div className="mt-12 text-center">
-            <Link
-              href="/blog"
-              id="home-cta-view-all-news"
-              className="inline-block bg-amber-900 hover:bg-amber-950 text-white px-8 py-4 rounded-lg font-bold transition transform hover:scale-105 shadow-md"
-            >
-              View All News
+      {/* how can we help */}
+      <section style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+        <div className="wrap">
+          <h2 style={{ margin: "0 0 8px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>How can we help you?</h2>
+          <p style={{ margin: "0 0 32px", color: "#5B6670", fontSize: "17px" }}>Everyday services for residents, plot owners and contractors on the island.</p>
+          <div className="g4">
+            <Link className="tile" href="/contact" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Report a facilities issue →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Streetlights, roads, drainage, security or noise</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/utilities" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Electricity &amp; power →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>EKEDC supply, our IPP and backup arrangements</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/utilities" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Connect to water →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>24/7 treated water from the central plant</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/utilities" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Connect to the sewage network →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Book your link to the central vacuum system</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/utilities" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Waste &amp; debris collection →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Thursday pickups and construction waste</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/utilities" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Internet &amp; MTN connectivity →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Getting your home or site online</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/building" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Get design approval →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Plot regulations and concept approval</span>
+            </Link>
+            {' '}
+            <Link className="tile" href="/building" style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "24px", background: "#FFFFFF", border: "1px solid #E5DED3", textDecoration: "none", color: "#1B2228", minHeight: "140px", boxSizing: "border-box" }}>
+              <span style={{ fontWeight: 700, fontSize: "18px", color: "#A9481A" }}>Apply for a construction permit →</span>
+              <span style={{ fontSize: "15px", color: "#5B6670" }}>Pre-construction and construction permits</span>
             </Link>
           </div>
+          <div style={{ marginTop: "20px" }}>
+            <Link href="/utilities" style={{ fontWeight: 700 }}>All services</Link>
+          </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-[#17202a] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Join Our Community?</h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-light">
-            Contact us today to learn more about available properties and become part of the Orange Island family.
-          </p>
-          <Link
-            href="/contact"
-            id="home-cta-get-started"
-            className="inline-block bg-white text-slate-950 px-10 py-4 rounded-md font-semibold hover:bg-slate-100 transition"
-          >
-            Get Started Today
-          </Link>
+      {/* power + connectivity features */}
+      <section style={{ background: "#FFFFFF", paddingTop: "72px", paddingBottom: "72px", borderTop: "1px solid #E5DED3", borderBottom: "1px solid #E5DED3" }}>
+        <div className="wrap g2">
+          <article style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ height: "300px", background: "#E6ECEF", display: "flex", alignItems: "flex-end", padding: "16px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
+              <Image src="/images/del_energy.jpg" alt="Power installation on Orange Island" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+            </div>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>POWER</span>
+            <h3 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "36px", lineHeight: 1.1 }}>Powered by our IPP partnership with DEL / Viathan</h3>
+            <p style={{ margin: "0", fontSize: "17px", lineHeight: 1.6, color: "#3A4650" }}>EKEDC remains the island’s primary source of power, providing approximately 20 hours of electricity daily. Our Independent Power Producer partnership with DEL / Viathan strengthens energy resilience and long-term sustainability, with backup generators on standby for emergencies.</p>
+            <Link href="/utilities" style={{ fontWeight: 700, fontSize: "16px" }}>How power works on the island →</Link>
+          </article>
+          <article style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ height: "300px", background: "#E6ECEF", display: "flex", alignItems: "flex-end", padding: "16px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
+              <Image src="/images/intercontra_telecom.jpg" alt="Telecoms installation on Orange Island" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+            </div>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>CONNECTIVITY</span>
+            <h3 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "36px", lineHeight: 1.1 }}>Connected to MTN</h3>
+            <p style={{ margin: "0", fontSize: "17px", lineHeight: 1.6, color: "#3A4650" }}>Orange Island is now connected to MTN’s network, bringing [fibre / high-speed connectivity — confirm service] to homes and building sites across the island. Work, stream and stay in touch from Lagos’ newest waterfront address.</p>
+            <Link href="/utilities" style={{ fontWeight: 700, fontSize: "16px" }}>Get connected →</Link>
+          </article>
+        </div>
+      </section>
+      {/* at a glance */}
+      <section style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+        <div className="wrap">
+          <h2 style={{ margin: "0 0 32px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>The island at a glance</h2>
+          <div className="g6">
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>150</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>hectares of reclaimed land</div>
+            </div>
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>17.3</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>hectares of open space and greenery</div>
+            </div>
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>24/7</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>treated water from the central plant</div>
+            </div>
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>~20h</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>daily EKEDC supply, plus IPP and backup</div>
+            </div>
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>1</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>central vacuum sewage network</div>
+            </div>
+            <div style={{ borderTop: "2px solid #0E2838", paddingTop: "16px" }}>
+              <div style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "48px", fontWeight: 700, color: "#0E2838", lineHeight: 1 }}>Thu</div>
+              <div style={{ fontSize: "14px", color: "#5B6670", marginTop: "8px" }}>weekly household waste collection</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* news */}
+      <section id="news" style={{ background: "#FFFFFF", paddingTop: "72px", paddingBottom: "72px", borderTop: "1px solid #E5DED3" }}>
+        <div className="wrap">
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "32px" }}>
+            <h2 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>Latest from the island</h2>
+            <Link href="/blog" style={{ fontWeight: 700 }}>More news</Link>
+          </div>
+          <div className="g3">
+            {posts.map((post) => (
+              <article key={post.id} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <div style={{ height: "200px", background: "#E6ECEF", position: "relative", overflow: "hidden" }}>
+                  {post.image ? (
+                    <Image src={post.image} alt="" fill sizes="(max-width: 1000px) 100vw, 33vw" style={{ objectFit: "cover" }} />
+                  ) : null}
+                </div>
+                <span style={{ fontSize: "14px", color: "#5B6670" }}>
+                  {new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </span>
+                <Link href={`/blog/${post.slug}`} style={{ fontWeight: 700, fontSize: "20px", color: "#1B2228", textDecoration: "none", lineHeight: 1.3 }}>{post.title}</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* districts */}
+      <section style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
+          <div style={{ flex: "1 1 380px", minWidth: "0", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>THE MASTERPLAN</span>
+            <h2 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px", lineHeight: 1.05 }}>Welcome to the world of Orange Island</h2>
+            <p style={{ margin: "0", fontSize: "17px", lineHeight: 1.6, color: "#3A4650" }}>With unique residential clusters along the island perimeter, each with its own identity and secure access to the lake, residents enjoy a lifestyle of tranquillity while still minutes from the leisure and amenities the island has to offer — the best of both worlds.</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "8px" }}>
+              <Link href="/about#masterplan" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#0E2838", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>View the masterplan</Link>
+              {' '}
+              <a href="#" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", border: "2px solid #0E2838", color: "#0E2838", textDecoration: "none", fontWeight: 700, boxSizing: "border-box" }}>Take a tour (video)</a>
+            </div>
+          </div>
+          <div style={{ flex: "1 1 520px", minWidth: "0" }} className="g2">
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>The Marina</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>Residential Enclaves</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>The Promenade</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>Boat Club</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>Central Park and Lake</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>Commercial Spaces</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>School</div>
+            <div style={{ padding: "16px 0", borderBottom: "1px solid #E5DED3", fontSize: "18px", fontWeight: 500 }}>Places of Worship</div>
+          </div>
+        </div>
+      </section>
+      {/* downloads + newsletter */}
+      <section style={{ background: "#F3ECE2", paddingTop: "56px", paddingBottom: "56px" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ flex: "1 1 420px", minWidth: "0" }}>
+            <h2 style={{ margin: "0 0 8px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "34px" }}>Stay informed</h2>
+            <p style={{ margin: "0 0 16px", fontSize: "16px", color: "#3A4650" }}>Get development updates, service notices and our newsletter.</p>
+            <NewsletterForm />
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a href="#" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 18px", background: "#FFFFFF", border: "1px solid #D8CDBF", color: "#1B2228", textDecoration: "none", fontWeight: 700 }}>Download brochure</a>
+            {' '}
+            <a href="#" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 18px", background: "#FFFFFF", border: "1px solid #D8CDBF", color: "#1B2228", textDecoration: "none", fontWeight: 700 }}>Download the ORIIS app</a>
+            {' '}
+            <Link href="/blog" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 18px", background: "#FFFFFF", border: "1px solid #D8CDBF", color: "#1B2228", textDecoration: "none", fontWeight: 700 }}>Newsletters</Link>
+          </div>
         </div>
       </section>
     </div>

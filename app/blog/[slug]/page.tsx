@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/content';
+import PageTitle from '@/components/site/PageTitle';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,30 +43,11 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-700 via-amber-600 to-amber-600 text-white py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/blog"
-            id="blog-detail-back-btn"
-            className="inline-flex items-center gap-2 text-amber-100 hover:text-white mb-6 transition"
-          >
-            ← Back to News
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">{post.title}</h1>
-          <div className="flex items-center gap-4 text-amber-100">
-            <span className="text-lg">
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
-            <span className="w-1.5 h-1.5 bg-amber-200 rounded-full" aria-hidden="true"></span>
-            <span className="text-lg">5 min read</span>
-          </div>
-        </div>
-      </section>
+      <PageTitle
+        title={post.title}
+        crumbs={[{ label: 'News & media', href: '/blog' }, { label: post.title }]}
+        meta={`${new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })} · 5 min read`}
+      />
 
       {/* Content Section */}
       <section className="py-16 bg-white">

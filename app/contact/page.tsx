@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import OfficeStatus from '@/components/OfficeStatus';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Contact Us - Orange Island Lagos',
@@ -30,26 +31,13 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
-      {/* ── 1. EACML-STYLE DARK HERO BANNER ── */}
-      <section className="bg-[#121722] text-white pt-24 pb-28 sm:pt-28 sm:pb-36 lg:pt-32 lg:pb-40 relative overflow-hidden">
-        {/* Subtle ambient grid / lighting pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-60" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
-              Contact Us
-            </h1>
-            <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
-              We&apos;re here to help. Reach out to us anytime—whether you have a question, need assistance, or just want to connect.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageTitle
+        title="Contact us"
+        intro="We're here to help. Reach out to us anytime—whether you have a question, need assistance, or just want to connect."
+      />
 
       {/* ── 2. MAIN SECTION: FORM + NEED ASSISTANCE CARD ── */}
-      <section className="-mt-16 sm:-mt-20 lg:-mt-24 pb-20 relative z-20">
+      <section className="pt-16 pb-20 relative z-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* Form column (Left) */}

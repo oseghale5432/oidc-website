@@ -1,218 +1,201 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About The Island - Orange Island Lagos',
-  description: 'Learn about Orange Island, a premium waterfront development by Orange Island Development Company and the Lagos State Government.',
+  title: 'Who We Are - Orange Island Lagos',
+  description: 'Orange Island is a master planned community delivered through a Public Private Partnership between Orange Island Development Company and the Lagos State Government.',
 };
 
-const allocations = [
-  ['Residential', '95.90', '63.60%'],
-  ['Road Reserve', '27.53', '18.25%'],
-  ['Open Space / Green Areas', '17.33', '11.49%'],
-  ['Mixed Use', '8.13', '5.39%'],
-  ['Public / Institutional', '1.10', '0.74%'],
-  ['Industrial', '0.80', '0.53%'],
-];
-
-export default function About() {
-  const districts = [
-    { title: 'The Marina', desc: 'Waterfront mooring, boat slips, and scenic dockside experiences.', icon: '⚓' },
-    { title: 'Residential Enclaves', desc: 'Exclusive low-density plots and stylish waterfront homes.', icon: '🏡' },
-    { title: 'The Promenade', desc: 'Pedestrian-friendly boardwalks with dining and leisure spots.', icon: '🌅' },
-    { title: 'Boat Club', desc: 'Premium nautical club facilities and watersports training.', icon: '⛵' },
-    { title: 'Central Park and Lake', desc: 'Expansive green parks, recreation zones, and serene lake views.', icon: '🌳' },
-    { title: 'Commercial Spaces', desc: 'Modern office hubs, retail boutiques, and corporate facilities.', icon: '🏢' },
-    { title: 'School', desc: 'World-class educational facilities and youth activity grounds.', icon: '🎓' },
-    { title: 'Places of Worship', desc: 'Peaceful community spaces dedicated to spiritual life.', icon: '🕊️' },
-  ];
-
+export default function AboutPage() {
   return (
-    <div className="bg-white text-[#3e403f]">
-      {/* ── HERO SECTION ── */}
-      <section className="bg-[#f8f8f8] py-16 sm:py-20">
-        <div className="mx-auto grid max-w-[1300px] gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
-          <div className="max-w-xl">
-            <span className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block">Our Vision</span>
-            <h1 className="text-[2.5rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.4rem]">
-              A master planned community and forward-thinking neighbourhood.
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-[#606261]">
-              Orange Island is poised to be a leading example of a stylish lifestyle with a strong sense of community, with security and safety central to its vision.
-            </p>
+    <div className="tpl tpl-about">
+      <section style={{ background: "#0E2838", color: "#FFFFFF" }}>
+        <div className="wrap" style={{ paddingTop: "28px", paddingBottom: "64px" }}>
+          <nav aria-label="Breadcrumb" style={{ fontSize: "14px", color: "#C3D2DB", marginBottom: "28px" }}><Link href="/" style={{ color: "#C3D2DB" }}>Home</Link> / Who we are</nav>
+          <h1 style={{ margin: "0 0 20px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "64px", lineHeight: 1.02 }}>Who we are</h1>
+          <p style={{ margin: "0", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "800px" }}>A master planned community and forward-thinking neighbourhood, delivered through a Public Private Partnership between Orange Island Development Company and the Lagos State Government.</p>
+        </div>
+      </section>
+      {/* vision */}
+      <section style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "56px" }}>
+          <div style={{ flex: "1 1 560px", minWidth: "0", display: "flex", flexDirection: "column", gap: "18px" }}>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>OUR VISION</span>
+            <p style={{ margin: "0", fontSize: "18px", lineHeight: 1.7, color: "#3A4650" }}>Orange Island has been conceptualised, managed and delivered by teams of national and international reputation. The Lagos State Government’s aspiration is to transform Lagos into an organised smart city which makes use of resources and services both tactically and efficiently. Orange Island is poised to be a leading example of a stylish lifestyle with a strong sense of community, with security and safety central to its vision.</p>
+            <p style={{ margin: "0", fontSize: "18px", lineHeight: 1.7, color: "#3A4650" }}>Orange Island Development Company (OIDC) is a special purpose company, formed for the purpose of owning, developing and operating the project. Its sponsor, FW Dredging Limited, is one of Nigeria’s foremost indigenous dredging companies.</p>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[12px] shadow-lg">
-            <Image
-              src="/images/Header_Image.png"
-              alt="Orange Island waterfront community"
-              fill
-              priority
-              className="object-cover"
-              sizes="(min-width: 1024px) 55vw, 100vw"
-            />
+          <aside style={{ flex: "1 1 380px", minWidth: "0", background: "#FFFFFF", border: "1px solid #E5DED3", padding: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <h2 style={{ margin: "0", fontSize: "20px" }}>Key milestones</h2>
+            <ol style={{ margin: "0", padding: "0", listStyle: "none", display: "flex", flexDirection: "column", gap: "14px", fontSize: "15px" }}>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>Jan 2013</strong>MoU signed between Lagos State Government and FW Dredging</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>Jan 2014</strong>Joint venture agreement signed with OIDC and Lagos State</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>[Year]</strong>Phase 1 infrastructure completed</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>[Year]</strong>Phase 2 infrastructure completed</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#A9481A" }}>2026</strong>Facilities &amp; development stage: IPP with DEL / Viathan and MTN connection</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+      {/* masterplan + land use */}
+      <section id="masterplan" style={{ background: "#FFFFFF", paddingTop: "72px", paddingBottom: "72px", borderTop: "1px solid #E5DED3", borderBottom: "1px solid #E5DED3" }}>
+        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
+          <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "18px" }}>
+            <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>MASTERPLAN</span>
+            <h2 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px", lineHeight: 1.05 }}>150 hectares on the Lagos Lagoon</h2>
+            <p style={{ margin: "0", fontSize: "17px", lineHeight: 1.65, color: "#3A4650" }}>The project is conceived with the singular aim of creating a super modern up-market residential, mixed use and commercial use mega city on a reclaimed island in the gentle waters of the Lagos Lagoon abutting the Lekki Phase 1 foreshore. It involved dredging sand from the bed of the lagoon, constructing an access land bridge and creating the infrastructure to service the island.</p>
+            <div style={{ height: "320px", background: "#E6ECEF", display: "flex", alignItems: "flex-end", padding: "16px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
+              <Image src="/images/orange_map.jpg" alt="Orange Island masterplan" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+            </div>
+          </div>
+          <div style={{ flex: "1 1 420px", minWidth: "0" }}>
+            <h3 style={{ margin: "0 0 14px", fontSize: "20px" }}>Land uses</h3>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "16px" }}>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ textAlign: "left", padding: "10px 0", borderBottom: "2px solid #0E2838" }}>Use</th>
+                    <th scope="col" style={{ textAlign: "right", padding: "10px 0", borderBottom: "2px solid #0E2838" }}>Hectares</th>
+                    <th scope="col" style={{ textAlign: "right", padding: "10px 0", borderBottom: "2px solid #0E2838" }}>%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Residential</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>95.9</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>63.6</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Road reserve</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>27.53</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>18.25</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Open space / greenery</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>17.33</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>11.49</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Mixed use</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>8.13</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>5.39</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Public use / institutional</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>1.1</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>0.74</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", borderBottom: "1px solid #E5DED3" }}>Industrial</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>0.8</td>
+                    <td style={{ textAlign: "right", borderBottom: "1px solid #E5DED3" }}>0.53</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: "10px 0", fontWeight: 700 }}>Total</td>
+                    <td style={{ textAlign: "right", fontWeight: 700 }}>150</td>
+                    <td style={{ textAlign: "right", fontWeight: 700 }}>100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 style={{ margin: "28px 0 10px", fontSize: "20px" }}>Location</h3>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>About a kilometre from Lekki Phase 1 and next to the Lekki Foreshore reclamation project, easily accessible via the Lekki-Ikoyi Link Bridge and Lekki-Epe Expressway through Freedom Way — minutes from shopping and leisure along Admiralty Way.</p>
           </div>
         </div>
       </section>
-
-      {/* ── WHO WE ARE SECTION ── */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-[1140px] px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-4">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block mb-2">Who We Are</span>
-              <h2 className="text-3xl font-bold text-[#202124] sm:text-[2.5rem] leading-tight">
-                A Public Private Partnership in Lagos
-              </h2>
-            </div>
-            <div className="space-y-5 text-[17px] leading-8 text-[#606261] lg:col-span-8">
-              <p>
-                A Public Private Partnership (PPP) between <strong className="font-semibold text-[#202124]">Orange Island Development Company</strong> and the <strong className="font-semibold text-[#202124]">Lagos State Government</strong>, Orange Island has been conceptualised, managed and delivered by teams of national and international reputation.
-              </p>
-              <p>
-                The Lagos State Government’s aspiration is to transform Lagos into an organised smart city which makes use of resources and services both tactically and efficiently.
-              </p>
-
-            </div>
-          </div>
-
-          <div className="mt-16 grid overflow-hidden rounded-[12px] border border-[#dce0e5] md:grid-cols-3 bg-white shadow-sm">
-            {[
-              ['150 Hectares', 'Planned land area (excl. water)'],
-              ['Public-Private', 'Lagos State Partnership (PPP)'],
-              ['~1 Kilometre', 'From Lekki Phase 1 foreshore'],
-            ].map(([value, label], index) => (
-              <div key={label} className={`p-8 ${index > 0 ? 'border-t border-[#dce0e5] md:border-l md:border-t-0' : ''}`}>
-                <p className="text-2xl font-extrabold text-[#202124]">{value}</p>
-                <p className="mt-2 text-sm font-medium text-[#85878a]">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── MASTERPLAN & LAND USE TABLE ── */}
-      <section className="bg-[#f8f8f8] py-20 sm:py-24 border-t border-[#eaeaea]">
-        <div className="mx-auto max-w-[1300px] px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block mb-2">Masterplan</span>
-            <h2 className="text-3xl font-bold text-[#202124] sm:text-[2.5rem]">
-              Conceived for Super Modern Living
-            </h2>
-            <p className="mt-5 leading-7 text-[#606261]">
-              The project is conceived with the singular aim of creating a super modern up-market residential, mixed use and commercial use mega city on a reclaimed island in the gentle waters of the Lagos Lagoon abutting the Lekki Phase 1 foreshore.
-            </p>
-            <p className="mt-3 leading-7 text-[#606261]">
-              The project, which accounts for 150 hectares of land exclusive of the water features, involves the dredging of sand from the bed of the Lagos Lagoon, the construction of an access land bridge and the creation of infrastructure to service the island.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
-            <div className="relative min-h-[460px] overflow-hidden rounded-[12px] border border-[#dce0e5] bg-white shadow-sm">
-              <Image
-                src="/images/orange_map.jpg"
-                alt="Orange Island Masterplan Map"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 65vw, 100vw"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-[12px] border border-[#dce0e5] bg-white shadow-sm">
-              <div className="bg-[#202124] px-6 py-4 text-white">
-                <h3 className="text-lg font-bold">Land Use Allocation</h3>
-                <p className="text-xs text-gray-300">Total 150 Hectares</p>
-              </div>
-              <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr] border-b border-[#dce0e5] px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#85878a]">
-                <span>Land Uses</span>
-                <span className="text-right">Hectares</span>
-                <span className="text-right">Share</span>
-              </div>
-              {allocations.map(([name, hectares, share]) => (
-                <div key={name} className="grid grid-cols-[1.5fr_0.7fr_0.7fr] border-b border-[#f0f0f0] px-6 py-3.5 text-sm hover:bg-slate-50 transition">
-                  <span className="font-semibold text-slate-800">{name}</span>
-                  <span className="text-right text-[#606261]">{hectares}</span>
-                  <span className="text-right font-medium text-amber-700">{share}</span>
-                </div>
-              ))}
-              <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr] bg-[#f8f5f2] px-6 py-4 text-sm font-bold text-[#202124]">
-                <span>Total</span>
-                <span className="text-right">150</span>
-                <span className="text-right text-amber-800">100%</span>
-              </div>
-            </div>
+      {/* board */}
+      <section style={{ paddingTop: "72px", paddingBottom: "72px" }}>
+        <div className="wrap">
+          <h2 style={{ margin: "0 0 32px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>Board of directors</h2>
+          <div className="g4">
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Olusegun Kassim</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Chairman</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Retired Deputy Inspector General of Police; director of several companies including FW Dredging Limited.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Olayinka Ogunsulire</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Managing Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Property development and investment professional with over 25 years’ experience; formerly CEO of Heirs Real Estate and MD of ARM Properties. FRICS.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>George Nwachukwu</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Non Executive Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Managing Director/CEO of FW Dredging; Fellow of the Institute of Chartered Accountants of Nigeria.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Chiedu Nweke</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Non Executive Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Managing Director of Swampsea Construction Nigeria; barrister with over 25 years’ post-qualification experience.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Theodore Omalu</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Non Executive Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Executive Director, business development at FW Dredging; over fifteen years’ top management experience.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Lookman Durosinmi-Etti</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Non Executive Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Co-founder of Etti &amp; Edu; former legal adviser to the Senate Committee on Banking and Currency.</p>
+            </article>
+            <article style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ aspectRatio: "4/5", background: "#E6ECEF" }}></div>
+              <h3 style={{ margin: "0", fontSize: "19px" }}>Adekunle Mujeeb Smith</h3>
+              <span style={{ fontSize: "14px", color: "#A9481A", fontWeight: 700 }}>Non Executive Director</span>
+              <p style={{ margin: "0", fontSize: "14px", lineHeight: 1.55, color: "#5B6670" }}>Experience across financial services, consulting and FMCG in Nigeria and the UK, including JP Morgan, London.</p>
+            </article>
           </div>
         </div>
       </section>
-
-      {/* ── DISTRICTS SECTION ── */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-[1300px] px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block mb-2">Island Layout</span>
-            <h2 className="text-3xl font-bold text-[#202124] sm:text-[2.5rem]">Districts of Orange Island</h2>
-            <p className="mt-3 text-lg text-[#606261] max-w-2xl mx-auto font-light">
-              Thoughtfully divided into dedicated zones that blend leisure, privacy, commerce, and community life.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {districts.map((dist) => (
-              <div key={dist.title} className="p-7 rounded-2xl border border-gray-150 bg-white hover:shadow-lg transition duration-300 hover:border-amber-300 group">
-                <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                  {dist.icon}
-                </div>
-                <h3 className="text-xl font-bold text-[#202124] mb-2">{dist.title}</h3>
-                <p className="text-sm text-[#606261] leading-relaxed font-light">{dist.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LOCATION & CONNECTIVITY SECTION ── */}
-      <section className="bg-[#f8f8f8] py-20 sm:py-28 border-t border-[#eaeaea]">
-        <div className="mx-auto grid max-w-[1360px] gap-10 px-6 lg:grid-cols-12 lg:items-center lg:gap-14 lg:px-8">
-          <div className="lg:col-span-5 xl:col-span-4">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8f6048] block mb-2">Location & Access</span>
-            <h2 className="text-3xl font-bold text-[#202124] sm:text-[2.5rem] leading-tight">
-              Located Close to the Places That Matter
-            </h2>
-            <p className="mt-5 leading-7 text-[#606261]">
-              Located about a kilometre from Lekki Phase 1 and next to the Lekki Foreshore reclamation project, Orange Island is easily accessible via Lekki-Ikoyi Link Bridge and Lekki-Epe Expressway through Freedom way.
-            </p>
-            <p className="mt-4 leading-7 text-[#606261]">
-              It is minutes from the shopping and leisure destinations along Admiralty Way.
-            </p>
-          </div>
-          <div className="lg:col-span-7 xl:col-span-8">
-            <div className="relative aspect-[16/10] min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] w-full overflow-hidden rounded-[16px] border border-[#dce0e5] bg-white shadow-xl">
-              <Image
-                src="/images/orange_location-2048x1157.jpg"
-                alt="Orange Island Location and Access Map"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1280px) 68vw, (min-width: 1024px) 58vw, 100vw"
-                priority
-              />
-            </div>
+      {/* development team */}
+      <section style={{ background: "#FFFFFF", paddingTop: "72px", paddingBottom: "72px", borderTop: "1px solid #E5DED3" }}>
+        <div className="wrap">
+          <h2 style={{ margin: "0 0 8px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>Development &amp; facilities partners</h2>
+          <p style={{ margin: "0 0 32px", fontSize: "17px", color: "#3A4650", maxWidth: "820px" }}>The team proudly recognises, supports and celebrates local Nigerian businesses and their international counterparts, creating partnerships that deliver a destination of global standards for all Nigerians to enjoy and be proud of.</p>
+          <div className="g3" style={{ gap: "0 32px" }}>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3", background: "#FFF6EE", paddingLeft: "12px" }}><strong>DEL / Viathan</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Independent Power Producer (IPP)</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3", background: "#FFF6EE", paddingLeft: "12px" }}><strong>MTN Nigeria</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Connectivity partner</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Van Oord Ltd</strong> · The Netherlands<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Dredging and reclamation contractor</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Swampsea Ltd</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Construction and development managers</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>GP Greed and Associates</strong> · South Africa<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Architects and master planners</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Metropolitan Construction Company</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Main building and infrastructure contractor</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Koa</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Mechanical and electrical consultants</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Aqseptance Group</strong> · Germany<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Filtration, separation and water technology</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Roelag Environmental Services</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Water, sewage and irrigation</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Willem Olaf Willem Engineering</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Shore protection and lake</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Ecopro Resources</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Environmental contractor</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Centurion Systems</strong> · South Africa<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Gate system</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Al-Mansour Engineering &amp; Construction</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Gate house</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Cynssa Technologies Int’l</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Street lighting</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Via Consult</strong> · South Africa<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Engineering design services</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Plot Hierarchy</strong> · United Kingdom<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Consultants</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Delano Architects</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Town planning consultants</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Mepas &amp; Prodel Ltd</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Town planning consultants</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Jackson Etti &amp; Edu</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Solicitor and legal adviser</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>COSEC Administrators</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Company secretary</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Keystone Bank</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Bankers</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>SIAO</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>External auditors</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Socrates Communications</strong> · United Kingdom<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Branding consultants</span></div>
           </div>
         </div>
       </section>
-
-      {/* ── CTA SECTION ── */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto flex max-w-[1140px] flex-col gap-6 rounded-[16px] bg-[#202124] text-white px-8 py-12 lg:flex-row lg:items-center lg:justify-between shadow-xl">
-          <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">Explore Life on Orange Island</h2>
-            <p className="mt-2 text-slate-300">Speak with our team about the development and available plot opportunities.</p>
+      {/* partners */}
+      <section style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+        <div className="wrap g2">
+          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3" }}>
+            <h3 style={{ margin: "0 0 8px", fontSize: "20px" }}>Lagos State Government</h3>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>Through its Ministry of Waterfront Infrastructure Development, Lagos State remains committed to delivering a thriving Lagos State.</p>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex shrink-0 justify-center rounded-lg bg-amber-600 px-7 py-3.5 text-sm font-semibold text-white hover:bg-amber-700 transition"
-          >
-            Contact Our Team
-          </Link>
+          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3" }}>
+            <h3 style={{ margin: "0 0 8px", fontSize: "20px" }}>FW Dredging Limited</h3>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>One of Nigeria’s foremost indigenous dredging companies, involved in some of the largest and most complex dredging projects in Nigeria.</p>
+          </div>
         </div>
       </section>
     </div>

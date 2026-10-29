@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Team & Partners - Orange Island Lagos',
@@ -52,27 +52,11 @@ export default function TeamPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[45vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/Header2.jpeg"
-            alt="Orange Island Team Header"
-            fill
-            className="object-cover brightness-[0.35]"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
-          <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
-            People Behind the Island
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
-            Team & Partners
-          </h1>
-          <div className="w-16 h-1 bg-orange-500 rounded"></div>
-        </div>
-      </section>
+      <PageTitle
+        title="Team & Partners"
+        crumbs={[{ label: 'Who we are', href: '/about' }, { label: 'Team & partners' }]}
+        intro="The people and partners behind the island."
+      />
 
       {/* Intro Statement Section */}
       <section className="py-16 bg-orange-50 border-b border-orange-100">

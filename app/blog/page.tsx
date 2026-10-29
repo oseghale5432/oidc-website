@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts } from '@/lib/content';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'News & Updates - Orange Island Lagos',
@@ -13,15 +14,10 @@ export default async function BlogPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white pt-36 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">News & Updates</h1>
-          <p className="text-xl text-amber-50 max-w-2xl font-light">
-            Stay informed about Orange Island Lagos developments and community news
-          </p>
-        </div>
-      </section>
+      <PageTitle
+        title="News & media"
+        intro="Stay informed about Orange Island Lagos developments and community news."
+      />
 
       {/* Blog Posts */}
       <section className="py-20 bg-gray-50">

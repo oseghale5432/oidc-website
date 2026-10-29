@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Instrument_Sans, Inter } from "next/font/google";
+import { Cormorant_Garamond, Karla } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import GlobalHeader from "@/components/GlobalHeader";
+import SiteHeader from "@/components/site/SiteHeader";
+import SiteFooter from "@/components/site/SiteFooter";
 
-const inter = Inter({
-  variable: "--font-inter",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
 });
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
+const karla = Karla({
+  variable: "--font-karla",
   subsets: ["latin"],
-});
-
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Orange Island Lagos - Secure Lakeside Living",
-  description: "A community offering secure lakeside living, world-class planning and effortless access to vibrant amenities.",
+  description: "A master planned community and forward-thinking neighbourhood on the Lagos Lagoon.",
 };
 
 export default function RootLayout({
@@ -30,16 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${instrumentSans.variable} ${ebGaramond.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <GlobalHeader />
-        <main className="flex-1 relative">
-          {children}
-        </main>
-        <Footer />
+    <html lang="en" className={`${cormorant.variable} ${karla.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col" style={{ background: "#FBF8F3", color: "#1B2228" }}>
+        <SiteHeader />
+        <main className="flex-1 relative">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Properties & Investments - Orange Island Lagos',
@@ -19,27 +19,11 @@ export default function PropertiesPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[55vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/EE257D20-950E-4769-A9BC-A34A843C676C.jpeg"
-            alt="Orange Island Reclamation"
-            fill
-            className="object-cover brightness-[0.35]"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
-          <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
-            Building Guidelines
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
-            Properties & Investments
-          </h1>
-          <div className="w-16 h-1 bg-orange-500 rounded"></div>
-        </div>
-      </section>
+      <PageTitle
+        title="Properties & Investments"
+        crumbs={[{ label: 'Building on the island', href: '/building' }, { label: 'Properties & investments' }]}
+        intro="Land for sale, plot sizes and zoning, and why to invest in Orange Island."
+      />
 
       {/* Land For Sale */}
       <section className="py-24 bg-white">

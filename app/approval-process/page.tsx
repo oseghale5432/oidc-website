@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Approval Process - Orange Island Lagos',
@@ -62,27 +62,11 @@ export default function ApprovalProcessPage() {
 
   return (
     <div className="reference-document min-h-screen bg-white pb-24 text-[#3e403f]">
-      {/* Hero Section */}
-      <section className="bg-[#f8f8f8] py-16 sm:py-20">
-        <div className="hidden">
-          <Image
-            src="/images/Header_Image.png"
-            alt="Orange Island Building Guidelines"
-            fill
-            className="object-cover brightness-[0.3]"
-            priority
-          />
-        </div>
-        <div className="mx-auto w-full max-w-[1140px] px-6 lg:px-8">
-          <span className="text-orange-400 font-bold uppercase tracking-widest text-sm block mb-3">
-            Building Guidelines
-          </span>
-          <h1 className="max-w-4xl text-[2.75rem] font-bold leading-[1.15] text-[#202124] sm:text-[3.6rem]">
-            Approval Process
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#606261]">Responsibilities, documentation and decisions required before, during and after construction.</p>
-        </div>
-      </section>
+      <PageTitle
+        title="Approval Process"
+        crumbs={[{ label: 'Building on the island', href: '/building' }, { label: 'Approval process' }]}
+        intro="Responsibilities, documentation and decisions required before, during and after construction."
+      />
 
       {/* Main Content */}
       <section className="relative mx-auto max-w-[1300px] px-6 py-20 lg:px-8">

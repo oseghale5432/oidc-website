@@ -6,12 +6,13 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, phone, message } = body;
 
-    if (!name || !email || !message) {
+    // Name and message are required, plus at least one way to reply (email or phone).
+    if (!name || !message || (!email && !phone)) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     initializeDatabase();
-    const submission = addContactSubmission(name, email, phone || '', message);
+    const submission = addContactSubmission(name, email || '', phone || '', message);
     return NextResponse.json(submission, { status: 201 });
   } catch (error) {
     console.error('Error submitting contact form:', error);

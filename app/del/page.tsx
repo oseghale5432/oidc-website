@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Decentralized Energy Limited (DEL) - Orange Island',
@@ -10,31 +10,14 @@ export const metadata: Metadata = {
 export default function DelPage() {
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
-      {/* Hero Section */}
-      <section className="relative h-[55vh] min-h-[420px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/del_energy.jpg"
-            alt="Decentralized Energy Limited (DEL) Infrastructure"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-slate-950/30" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
-          <span className="text-amber-400 font-bold uppercase tracking-widest text-sm block mb-3">
-            Strategic Partnership
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight max-w-4xl leading-tight">
-            Orange Island & Decentralized Energy Limited (DEL)
-          </h1>
-          <div className="w-20 h-1.5 bg-amber-500 rounded"></div>
-        </div>
-      </section>
+      <PageTitle
+        eyebrow="Strategic partnership"
+        title="Orange Island & Decentralized Energy Limited (DEL)"
+        crumbs={[{ label: 'Utilities & infrastructure', href: '/utilities' }, { label: 'DEL' }]}
+      />
 
       {/* Main Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 relative z-20">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-16 mb-12">
           
           <div className="prose prose-lg max-w-none text-gray-600 font-light leading-relaxed space-y-8">

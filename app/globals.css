@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-primary: 'Uni Sans', var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-secondary: 'Adobe Garamond', 'Adobe Garamond Pro', var(--font-eb-garamond), 'Garamond', 'Georgia', serif;
+  --background: #FBF8F3;
+  --foreground: #1B2228;
+  --font-primary: var(--font-karla), Karla, 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
 }
 
 @theme inline {
@@ -12,21 +12,31 @@
   --color-foreground: var(--foreground);
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
-  --font-sans: 'Uni Sans', var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Adobe Garamond', 'Adobe Garamond Pro', var(--font-eb-garamond), 'Garamond', 'Georgia', serif;
-  --font-caption: 'Adobe Garamond', 'Adobe Garamond Pro', var(--font-eb-garamond), 'Garamond', 'Georgia', serif;
+  --font-sans: var(--font-karla), Karla, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-caption: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --color-orange-50: #f8f5f2;
-  --color-orange-100: #eee6df;
-  --color-orange-200: #dfcfc3;
-  --color-orange-300: #c8aa96;
-  --color-orange-400: #aa8068;
-  --color-orange-500: #8f6048;
-  --color-orange-600: #754a37;
-  --color-orange-700: #613d30;
-  --color-orange-800: #50342b;
-  --color-orange-900: #432e27;
-  --color-orange-950: #251713;
+  --color-orange-50: #FFF6EE;
+  --color-orange-100: #FFF1E3;
+  --color-orange-200: #F1D2B4;
+  --color-orange-300: #E8B48A;
+  --color-orange-400: #D98A55;
+  --color-orange-500: #C9611F;
+  --color-orange-600: #A9481A;
+  --color-orange-700: #7E3411;
+  --color-orange-800: #6A2C10;
+  --color-orange-900: #5A250E;
+  --color-orange-950: #3A1808;
+  --color-amber-50: #FFF6EE;
+  --color-amber-100: #FFF1E3;
+  --color-amber-200: #F1D2B4;
+  --color-amber-400: #F2A65A;
+  --color-amber-500: #C9611F;
+  --color-amber-600: #A9481A;
+  --color-amber-700: #8F3C16;
+  --color-amber-800: #7E3411;
+  --color-amber-900: #0E2838;
+  --color-amber-950: #0A1F2B;
   --animate-slide-up: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
@@ -41,12 +51,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
@@ -72,6 +76,53 @@ caption, figcaption, .caption, .font-caption, .font-secondary, .font-serif {
 
 .reference-document .shadow-xl, .reference-document .shadow-lg, .reference-document .shadow-sm { box-shadow: none !important; }
 .reference-document .rounded-2xl, .reference-document .rounded-xl, .reference-document .rounded-lg { border-radius: 10px !important; }
-.reference-document [class*="bg-orange-"] { background-color: #f8f5f2 !important; }
-.reference-document [class*="text-orange-"] { color: #754a37 !important; }
-.reference-document [class*="border-orange-"] { border-color: #8f6048 !important; }
+.reference-document [class*="bg-orange-"] { background-color: #FFF6EE !important; }
+.reference-document [class*="text-orange-"] { color: #A9481A !important; }
+.reference-document [class*="border-orange-"] { border-color: #C9611F !important; }
+
+/* ─────────────────────────────────────────────────────────────
+   Orange Island redesign (mirrors the "Orange Island Website Redesign" design)
+   .tpl wraps every page/region built from the design. Inside it we undo
+   Tailwind's preflight so the design renders with normal browser defaults;
+   all design styling itself is inline on the elements.
+   ───────────────────────────────────────────────────────────── */
+.tpl { font-family: var(--font-primary); color: #1B2228; line-height: normal; }
+.tpl, .tpl *, .tpl *::before, .tpl *::after { box-sizing: content-box; }
+.tpl a { color: #A9481A; text-decoration: underline; }
+.tpl a:hover { color: #7E3411; }
+.tpl h1, .tpl h2, .tpl h3, .tpl h4 { font-family: inherit; font-weight: bold; letter-spacing: normal; line-height: normal; }
+.tpl h1 { font-size: 2em; margin: 0.67em 0; }
+.tpl h2 { font-size: 1.5em; margin: 0.83em 0; }
+.tpl h3 { font-size: 1.17em; margin: 1em 0; }
+.tpl h4 { margin: 1.33em 0; }
+.tpl p { margin: 1em 0; }
+.tpl ul, .tpl ol { margin: 1em 0; padding-left: 40px; }
+.tpl ul { list-style: disc; }
+.tpl ol { list-style: decimal; }
+.tpl table { border-collapse: separate; text-indent: initial; }
+.tpl th { font-weight: bold; text-align: center; }
+.tpl input, .tpl select, .tpl textarea { background-color: #FFFFFF; color: #1B2228; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; box-sizing: border-box; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.g4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.g5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.g6 { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.tpl-about .g4 { gap: 20px; }
+.tile:hover { border-color: #A9481A !important; }
+.main-nav a:hover { color: #A9481A !important; }
+
+@media (max-width: 1000px) {
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: minmax(0, 1fr); }
+  .tpl-about .g3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .g2, .g4, .g5, .g6, .tpl-about .g3 { grid-template-columns: minmax(0, 1fr); }
+  .hideS { display: none; }
+  .hero-h { font-size: 44px !important; }
+}

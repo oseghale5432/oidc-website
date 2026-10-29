@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import PageTitle from '@/components/site/PageTitle';
 
 export const metadata: Metadata = {
   title: 'Venco Estate App - Orange Island Lagos',
@@ -16,67 +16,18 @@ export default function VencoPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-orange-50/40 overflow-hidden py-16 md:py-24 border-b border-orange-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <span className="text-orange-600 font-bold uppercase tracking-widest text-sm block mb-3">
-              Orange Island Partnership
-            </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Community Access & Security via <span className="text-orange-600">Venco App</span>
-            </h1>
-            <p className="text-lg text-gray-700 font-light leading-relaxed mb-8">
-              We are delighted to announce our partnership with Venco, a technology company that provides solutions
-              to enhance living experiences in residential and commercial communities, enhancing security and access control
-              across Orange Island.
-            </p>
-            <p className="text-sm text-gray-500 font-light bg-orange-50 p-4 border-l-2 border-orange-500 rounded-r-lg mb-8">
-              🔒 This portal feature is available exclusively to all plot owners with up-to-date payments and subscriptions.
-            </p>
-
-            {/* Download Links */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://apps.apple.com/ng/app/venco-estate-app/id1542447397"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-gray-900 hover:bg-gray-950 text-white px-6 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg active:scale-98"
-              >
-                <span className="text-2xl"></span>
-                <div className="text-left">
-                  <p className="text-[10px] uppercase font-light text-gray-400">Download on the</p>
-                  <p className="text-sm font-semibold -mt-1">App Store</p>
-                </div>
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.manqala.estatemanager"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-gray-900 hover:bg-gray-950 text-white px-6 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg active:scale-98"
-              >
-                <span className="text-xl">🤖</span>
-                <div className="text-left">
-                  <p className="text-[10px] uppercase font-light text-gray-400">Get it on</p>
-                  <p className="text-sm font-semibold -mt-1">Google Play</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
-              <Image
-                src="/images/venco_app-header.png"
-                alt="Venco Estate App Mockup"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
+      <PageTitle
+        eyebrow="Orange Island partnership"
+        title="Community access & security via the Venco app"
+        crumbs={[{ label: 'Utilities & infrastructure', href: '/utilities' }, { label: 'Venco app' }]}
+        intro="We are delighted to announce our partnership with Venco, a technology company that provides solutions to enhance living experiences in residential and commercial communities, enhancing security and access control across Orange Island."
+      >
+        <p style={{ margin: '24px 0 0', fontSize: '15px', color: '#F2A65A' }}>Available exclusively to plot owners with up-to-date payments and subscriptions.</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '24px' }}>
+          <a href="https://apps.apple.com/ng/app/venco-estate-app/id1542447397" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', minHeight: '48px', padding: '0 20px', background: '#C9611F', color: '#FFFFFF', textDecoration: 'none', fontWeight: 700 }}>Download on the App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.manqala.estatemanager" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', minHeight: '48px', padding: '0 20px', border: '2px solid #FFFFFF', color: '#FFFFFF', textDecoration: 'none', fontWeight: 700 }}>Get it on Google Play</a>
         </div>
-      </section>
+      </PageTitle>
 
       {/* App Features List */}
       <section className="py-24 bg-white">
