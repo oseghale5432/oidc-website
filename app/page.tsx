@@ -33,7 +33,7 @@ export default async function Home() {
             <HomeSearch />
           </div>
           <div style={{ flex: "1 1 420px", minWidth: "0", height: "420px", background: "#1E4256", border: "1px solid #2E5569", display: "flex", alignItems: "flex-end", padding: "20px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-            <Image src="/images/orange-island-2048x1157.jpg" alt="Aerial view of Orange Island on the Lagos Lagoon" fill sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+            <Image src="/images/Header2.jpeg" alt="Aerial view of Orange Island showing its roads and plots on the Lagos Lagoon" fill priority sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
