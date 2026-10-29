@@ -1,9 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const SERIF = "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif";
 
 const NAV = [
   { href: '/about', label: 'Who we are', match: ['/about', '/team'] },
@@ -42,9 +41,8 @@ export default function SiteHeader() {
       {/* header */}
       <header style={{ background: '#FFFFFF', borderBottom: '1px solid #E5DED3' }}>
         <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', paddingTop: '18px', paddingBottom: '18px' }}>
-          <Link href="/" aria-label="Orange Island home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-            <span style={{ fontFamily: SERIF, fontWeight: 700, fontSize: '30px', letterSpacing: '2px', color: '#7A2E14', lineHeight: 1 }}>ORANGE ISLAND</span>
-            <span style={{ fontSize: '11px', letterSpacing: '3px', color: '#7A2E14' }}>LAGOS</span>
+          <Link href="/" aria-label="Orange Island Lagos home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <Image src="/orange-island-logo.png" alt="Orange Island Lagos" width={434} height={200} priority style={{ height: '56px', width: 'auto', display: 'block' }} />
           </Link>
           <nav aria-label="Main" className="main-nav" style={{ display: 'flex', flexWrap: 'wrap', gap: '28px', fontSize: '16px', fontWeight: 500 }}>
             {NAV.map((item) => {

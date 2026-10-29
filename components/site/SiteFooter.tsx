@@ -1,9 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const SERIF = "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif";
 const INSTAGRAM = 'https://www.instagram.com/orangeislandng/';
 
 /** Full four-column footer on the home page, compact footer on inner pages (as in the design). */
@@ -15,7 +15,7 @@ export default function SiteFooter() {
     return (
       <footer className="tpl" style={{ background: '#0E2838', color: '#D6DFE5', paddingTop: '40px', paddingBottom: '28px' }}>
         <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px', fontSize: '14px' }}>
-          <span style={{ fontFamily: SERIF, fontWeight: 700, fontSize: '24px', letterSpacing: '2px', color: '#FFFFFF' }}>ORANGE ISLAND</span>
+          <Image src="/logo-white.png" alt="Orange Island" width={1047} height={484} style={{ height: '48px', width: 'auto', display: 'block' }} />
           <span style={{ lineHeight: 1.6 }}>
             hello@orangeislandng.com · +234 813 299 2279
             <br />
@@ -36,7 +36,7 @@ export default function SiteFooter() {
       <div className="wrap">
         <div className="g4" style={{ gap: '32px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <span style={{ fontFamily: SERIF, fontWeight: 700, fontSize: '26px', letterSpacing: '2px', color: '#FFFFFF' }}>ORANGE ISLAND</span>
+            <Image src="/logo-white.png" alt="Orange Island" width={1047} height={484} style={{ height: '56px', width: 'auto', display: 'block', alignSelf: 'flex-start', marginBottom: '6px' }} />
             <span style={{ fontSize: '14px', lineHeight: 1.6 }}>Orange Island Development Company<br />On Oba Ademola Elegushi Boulevard,<br />Lagoon District, Freedom Way,<br />Lekki Phase 1, Lagos.</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '15px' }}>
