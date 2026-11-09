@@ -63,47 +63,50 @@ export default function SiteHeader() {
           <Link href="/" aria-label="Orange Island Lagos home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <Image src="/orange-island-logo.png" alt="Orange Island Lagos" width={434} height={200} priority style={{ height: '56px', width: 'auto', display: 'block' }} />
           </Link>
-          <nav aria-label="Main" className="main-nav" style={{ flexWrap: 'wrap', gap: '28px', fontSize: '16px', fontWeight: 500 }}>
-            {NAV.map((item) => {
-              const active = isActive(item.match);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? 'page' : undefined}
-                  style={
-                    active
-                      ? { color: '#A9481A', textDecoration: 'none', borderBottom: '2px solid #A9481A' }
-                      : { color: '#1B2228', textDecoration: 'none' }
-                  }
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            <nav aria-label="Main" className="main-nav" style={{ flexWrap: 'wrap', gap: '28px', fontSize: '16px', fontWeight: 500 }}>
+              {NAV.map((item) => {
+                const active = isActive(item.match);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? 'page' : undefined}
+                    style={
+                      active
+                        ? { color: '#A9481A', textDecoration: 'none', borderBottom: '2px solid #A9481A' }
+                        : { color: '#1B2228', textDecoration: 'none' }
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <Image src="/images/proudly-nigerian.png" alt="Proudly Nigerian" width={1438} height={1318} className="proud-badge" style={{ height: '56px', width: 'auto', display: 'block' }} />
+            {/* mobile menu button (shown below 1100px) */}
+            <button
+              type="button"
+              className="menu-btn"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => {
+                setOpenedOn(pathname);
+                setOpen((o) => !o);
+              }}
+              style={{ alignItems: 'center', gap: '10px', minHeight: '44px', padding: '0 14px', background: open ? '#0E2838' : '#FFFFFF', color: open ? '#FFFFFF' : '#0E2838', border: '2px solid #0E2838', fontFamily: 'inherit', fontSize: '15px', fontWeight: 700, cursor: 'pointer' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style={{ display: 'block' }}>
+                {open ? (
+                  <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                ) : (
+                  <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                )}
+              </svg>
+              {open ? 'Close' : 'Menu'}
+            </button>
+          </div>
 
-          {/* mobile menu button (shown below 900px) */}
-          <button
-            type="button"
-            className="menu-btn"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => {
-              setOpenedOn(pathname);
-              setOpen((o) => !o);
-            }}
-            style={{ alignItems: 'center', gap: '10px', minHeight: '44px', padding: '0 14px', background: open ? '#0E2838' : '#FFFFFF', color: open ? '#FFFFFF' : '#0E2838', border: '2px solid #0E2838', fontFamily: 'inherit', fontSize: '15px', fontWeight: 700, cursor: 'pointer' }}
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style={{ display: 'block' }}>
-              {open ? (
-                <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              ) : (
-                <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              )}
-            </svg>
-            {open ? 'Close' : 'Menu'}
-          </button>
         </div>
 
         {/* mobile menu panel */}
@@ -127,7 +130,7 @@ export default function SiteHeader() {
               })}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
                 <Link href="/utilities#facilities" onClick={() => setOpen(false)} style={{ display: 'inline-flex', alignItems: 'center', minHeight: '44px', padding: '0 16px', background: '#A9481A', color: '#FFFFFF', textDecoration: 'none', fontWeight: 700 }}>Facilities helpdesk</Link>
-                <a href="tel:+2348132992279" style={{ display: 'inline-flex', alignItems: 'center', minHeight: '44px', padding: '0 16px', border: '2px solid #0E2838', color: '#0E2838', textDecoration: 'none', fontWeight: 700, boxSizing: 'border-box' }}>Call +234 813 299 2279</a>
+                <a href="tel:+2349069893085" style={{ display: 'inline-flex', alignItems: 'center', minHeight: '44px', padding: '0 16px', border: '2px solid #0E2838', color: '#0E2838', textDecoration: 'none', fontWeight: 700, boxSizing: 'border-box' }}>Call facilities 0906 989 3085</a>
               </div>
             </div>
           </nav>

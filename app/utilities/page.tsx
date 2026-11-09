@@ -16,7 +16,7 @@ export default function UtilitiesPage() {
         <div className="wrap" style={{ paddingTop: "28px", paddingBottom: "64px" }}>
           <nav aria-label="Breadcrumb" style={{ fontSize: "14px", color: "#C3D2DB", marginBottom: "28px" }}><Link href="/" style={{ color: "#C3D2DB" }}>Home</Link> / Utilities &amp; infrastructure</nav>
           <h1 style={{ margin: "0 0 20px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "64px", lineHeight: 1.02 }}>Utilities &amp; Infrastructure</h1>
-          <p style={{ margin: "0", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "760px" }}>Orange Island is fully serviced. Every plot is supported by a central water supply, a vacuum sewage network, reliable power and modern connectivity — managed day to day by our on-island facilities team.</p>
+          <p style={{ margin: "0", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "760px" }}>Orange Island is fully serviced. Every plot is supported by a central water supply, a vacuum sewage network, reliable power and modern connectivity — managed day to day by our facilities team.</p>
         </div>
       </section>
       {/* jump links */}
@@ -69,8 +69,8 @@ export default function UtilitiesPage() {
                 <div style={{ fontSize: "14px", color: "#5B6670" }}>Primary source · approx. 20 hours daily</div>
               </div>
             </div>
-            <div style={{ padding: "20px", border: "1px solid #E5DED3", display: "flex", gap: "16px", alignItems: "center", background: "#FFF6EE" }}>
-              <span style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "40px", fontWeight: 700, color: "#A9481A", width: "64px" }}>2</span>
+            <div style={{ padding: "20px", border: "1px solid #E5DED3", display: "flex", gap: "16px", alignItems: "center" }}>
+              <span style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontSize: "40px", fontWeight: 700, color: "#0E2838", width: "64px" }}>2</span>
               <div>
                 <div style={{ fontWeight: 700 }}>IPP — DEL / Viathan</div>
                 <div style={{ fontSize: "14px", color: "#5B6670" }}>Independent power for resilience and sustainability</div>
@@ -143,7 +143,7 @@ export default function UtilitiesPage() {
           <div style={{ flex: "1 1 480px", minWidth: "0" }}>
             <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#A9481A", fontWeight: 700 }}>VENCO</span>
             <h2 style={{ margin: "8px 0 10px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "36px" }}>Estate access &amp; security with the Venco app</h2>
-            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>Through our partnership with Venco, residents can pre-register visitors with secure QR codes for gate entry, top up utilities, report issues to the facilities team and receive estate announcements. Available to all plot owners with up-to-date payments and subscriptions.</p>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>Through our partnership with Venco, residents can pre-register visitors with secure QR codes for gate entry. Utility prepayments, issue tracking and community broadcasts are coming soon. Available to all plot owners with up-to-date payments and subscriptions.</p>
           </div>
           <Link href="/venco-app" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#0E2838", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>Get the Venco app</Link>
         </div>
@@ -195,7 +195,7 @@ export default function UtilitiesPage() {
           <div style={{ flex: "1 1 380px", minWidth: "0", display: "flex", flexDirection: "column", gap: "14px" }}>
             <h2 style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px", lineHeight: 1.05 }}>Contact the facilities team</h2>
             <p style={{ margin: "0", fontSize: "17px", lineHeight: 1.6, color: "#3A4650" }}>Book a sewage or water connection, arrange a debris collection, or report an issue on the island.</p>
-            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.7 }}><a href="mailto:hello@orangeislandng.com">hello@orangeislandng.com</a><br /><a href="tel:+2348132992279">+234 813 299 2279</a><br />[Facilities direct line]</p>
+            <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.7 }}><strong>Facilities team</strong><br /><a href="tel:+2349069893085">0906 989 3085</a><br /><a href="mailto:facilities.management@orangeislandng.com">facilities.management@orangeislandng.com</a></p>
           </div>
           <FacilitiesForm />
         </div>

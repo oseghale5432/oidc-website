@@ -30,8 +30,8 @@ export default function AboutPage() {
             <ol style={{ margin: "0", padding: "0", listStyle: "none", display: "flex", flexDirection: "column", gap: "14px", fontSize: "15px" }}>
               <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>Jan 2013</strong>MoU signed between Lagos State Government and FW Dredging</li>
               <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>Jan 2014</strong>Joint venture agreement signed with OIDC and Lagos State</li>
-              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>[Year]</strong>Phase 1 infrastructure completed</li>
-              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>[Year]</strong>Phase 2 infrastructure completed</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>20..</strong>Phase 1 infrastructure completed</li>
+              <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#0E2838" }}>20..</strong>Phase 2 infrastructure completed</li>
               <li style={{ display: "flex", gap: "14px" }}><strong style={{ width: "72px", flex: "none", color: "#A9481A" }}>2026</strong>Facilities &amp; development stage: IPP with DEL / Viathan and MTN connection</li>
             </ol>
           </aside>
@@ -159,8 +159,8 @@ export default function AboutPage() {
           <h2 style={{ margin: "0 0 8px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "44px" }}>Development &amp; facilities partners</h2>
           <p style={{ margin: "0 0 32px", fontSize: "17px", color: "#3A4650", maxWidth: "820px" }}>The team proudly recognises, supports and celebrates local Nigerian businesses and their international counterparts, creating partnerships that deliver a destination of global standards for all Nigerians to enjoy and be proud of.</p>
           <div className="g3" style={{ gap: "0 32px" }}>
-            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3", background: "#FFF6EE", paddingLeft: "12px" }}><strong>DEL / Viathan</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Independent Power Producer (IPP)</span></div>
-            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3", background: "#FFF6EE", paddingLeft: "12px" }}><strong>MTN Nigeria</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Connectivity partner</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>DEL / Viathan</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Independent Power Producer (IPP)</span></div>
+            <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>MTN Nigeria</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Connectivity partner</span></div>
             <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Van Oord Ltd</strong> · The Netherlands<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Dredging and reclamation contractor</span></div>
             <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>Swampsea Ltd</strong> · Nigeria<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Construction and development managers</span></div>
             <div style={{ padding: "14px 0", borderBottom: "1px solid #E5DED3" }}><strong>GP Greed and Associates</strong> · South Africa<br /><span style={{ fontSize: "14px", color: "#5B6670" }}>Architects and master planners</span></div>
@@ -188,13 +188,19 @@ export default function AboutPage() {
       {/* partners */}
       <section style={{ paddingTop: "64px", paddingBottom: "64px" }}>
         <div className="wrap g2">
-          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3" }}>
+          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3", display: "flex", gap: "24px", alignItems: "center" }}>
+            <Image src="/images/lagos-state-government-logo.png" alt="Lagos State Government coat of arms" width={384} height={384} style={{ width: "96px", height: "96px", objectFit: "contain", flex: "none" }} />
+            <div>
             <h3 style={{ margin: "0 0 8px", fontSize: "20px" }}>Lagos State Government</h3>
             <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>Through its Ministry of Waterfront Infrastructure Development, Lagos State remains committed to delivering a thriving Lagos State.</p>
+            </div>
           </div>
-          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3" }}>
+          <div style={{ padding: "28px", background: "#FFFFFF", border: "1px solid #E5DED3", display: "flex", gap: "24px", alignItems: "center" }}>
+            <Image src="/images/fw-dredging-logo.png" alt="FW Dredging Limited logo" width={800} height={435} style={{ width: "150px", height: "auto", flex: "none" }} />
+            <div>
             <h3 style={{ margin: "0 0 8px", fontSize: "20px" }}>FW Dredging Limited</h3>
             <p style={{ margin: "0", fontSize: "16px", lineHeight: 1.6, color: "#3A4650" }}>One of Nigeria’s foremost indigenous dredging companies, involved in some of the largest and most complex dredging projects in Nigeria.</p>
+            </div>
           </div>
         </div>
       </section>

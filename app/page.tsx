@@ -23,17 +23,16 @@ export default async function Home() {
           <span>Waste collection is every <strong>Thursday</strong>. Please place bins at your central collection point. Sewage network connections are now being scheduled — <Link href="/utilities">book yours</Link>.</span>
         </div>
       </div>
-      {/* hero */}
-      <section style={{ background: "#0E2838", color: "#FFFFFF" }}>
-        <div className="wrap" style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "center", paddingTop: "80px", paddingBottom: "80px" }}>
-          <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "24px" }}>
+      {/* hero — aerial view of the island layout as the background */}
+      <section style={{ position: "relative", overflow: "hidden", background: "#0E2838", color: "#FFFFFF" }}>
+        <Image src="/images/Header2.jpeg" alt="" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: "center" }} />
+        <div aria-hidden="true" className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
+        <div className="wrap" style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "520px", paddingTop: "88px", paddingBottom: "88px" }}>
+          <div style={{ flex: "0 1 620px", minWidth: "0", display: "flex", flexDirection: "column", gap: "24px" }}>
             <span style={{ fontSize: "13px", letterSpacing: "3px", color: "#F2A65A", fontWeight: 700 }}>NOW IN OUR FACILITIES &amp; DEVELOPMENT STAGE</span>
             <h1 className="hero-h" style={{ margin: "0", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "68px", lineHeight: 1.02 }}>Welcome to Orange Island</h1>
             <p style={{ margin: "0", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "560px" }}>A master planned community and forward-thinking neighbourhood on the Lagos Lagoon. The island is reclaimed, serviced and in operation — now we are building the facilities and the community that will call it home.</p>
             <HomeSearch />
-          </div>
-          <div style={{ flex: "1 1 420px", minWidth: "0", height: "420px", background: "#1E4256", border: "1px solid #2E5569", display: "flex", alignItems: "flex-end", padding: "20px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-            <Image src="/images/Header2.jpeg" alt="Aerial view of Orange Island showing its roads and plots on the Lagos Lagoon" fill priority sizes="(max-width: 1000px) 100vw, 50vw" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>

@@ -224,9 +224,9 @@ export default function BuildingPage() {
             <p style={{ margin: "0", fontSize: "17px", color: "#D6DFE5" }}>Our team can walk you and your architect through each stage.</p>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-            <a href="mailto:hello@orangeislandng.com" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#C9611F", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>Email the approvals team</a>
+            <a href="mailto:facilities.management@orangeislandng.com" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#C9611F", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>Email the facilities team</a>
             {' '}
-            <a href="tel:+2348132992279" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", border: "2px solid #FFFFFF", color: "#FFFFFF", textDecoration: "none", fontWeight: 700, boxSizing: "border-box" }}>+234 813 299 2279</a>
+            <a href="tel:+2349069893085" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", border: "2px solid #FFFFFF", color: "#FFFFFF", textDecoration: "none", fontWeight: 700, boxSizing: "border-box" }}>0906 989 3085</a>
           </div>
         </div>
       </section>

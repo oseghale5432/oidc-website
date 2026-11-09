@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function VencoPage() {
   const features = [
-    { title: 'Access Control & Security', desc: 'Pre-register visitors and issue secure QR codes for quick, verified entry gate access.' },
-    { title: 'Utility Prepayments', desc: 'Easily top up electricity tokens and pay water/facility subscriptions.' },
-    { title: 'Issue Tracking', desc: 'Report leaks, outages, or security issues directly to the facility managers with image uploads.' },
-    { title: 'Community Broadcasts', desc: 'Stay updated with notifications, estate guidelines, and general announcements.' },
+    { title: 'Access Control & Security', soon: false, desc: 'Pre-register visitors and issue secure QR codes for quick, verified entry gate access.' },
+    { title: 'Utility Prepayments', soon: true, desc: 'Easily top up electricity tokens and pay water/facility subscriptions.' },
+    { title: 'Issue Tracking', soon: true, desc: 'Report leaks, outages, or security issues directly to the facility managers with image uploads.' },
+    { title: 'Community Broadcasts', soon: true, desc: 'Stay updated with notifications, estate guidelines, and general announcements.' },
   ];
 
   return (
@@ -40,10 +40,15 @@ export default function VencoPage() {
             {features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow transition duration-300 hover:border-orange-300"
+                className="bg-white border border-[#E5DED3] rounded-2xl p-6 shadow-sm hover:shadow transition duration-300 hover:border-orange-300"
               >
-                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-xl font-bold mb-5">
-                  0{idx + 1}
+                <div className="flex items-center justify-between gap-3 mb-5">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold ${feat.soon ? 'bg-gray-100 text-gray-500' : 'bg-orange-100 text-orange-600'}`}>
+                    0{idx + 1}
+                  </div>
+                  {feat.soon && (
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#A9481A] bg-[#FFF1E3] border border-[#F1D2B4] px-2.5 py-1">Coming soon</span>
+                  )}
                 </div>
                 <h4 className="font-bold text-gray-950 text-lg mb-3">{feat.title}</h4>
                 <p className="text-gray-600 text-sm font-light leading-relaxed">{feat.desc}</p>

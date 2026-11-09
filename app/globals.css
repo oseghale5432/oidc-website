@@ -114,13 +114,17 @@ caption, figcaption, .caption, .font-caption, .font-secondary, .font-serif {
 .main-nav { display: flex; }
 .main-nav a:hover { color: #A9481A !important; }
 .menu-btn { display: none; }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .main-nav { display: none; }
   .menu-btn { display: inline-flex; }
   .audience-nav { display: none !important; }
 }
-@media (min-width: 901px) {
+@media (min-width: 1101px) {
   .mobile-menu { display: none; }
+}
+.hero-overlay { background: linear-gradient(90deg, rgba(14,40,56,0.94) 0%, rgba(14,40,56,0.86) 38%, rgba(14,40,56,0.35) 68%, rgba(14,40,56,0.08) 100%); }
+@media (max-width: 1000px) {
+  .hero-overlay { background: rgba(14,40,56,0.82); }
 }
 
 @media (max-width: 1000px) {

@@ -14,13 +14,19 @@ The site now mirrors the "Orange Island Website Redesign" design (boards: Home, 
   - `/api/contact` now accepts email **or** phone (the facilities form has no email field).
 - **Photos** from `public/images` fill the design's photo placeholders (home hero, power, connectivity, masterplan) and the home news cards now show the latest 3 posts.
 
+## Latest updates
+
+- Home hero now uses the aerial island layout photo (`Header2.jpeg`) as a full-width background with a navy fade for legibility.
+- Proudly Nigerian badge sits at the top right of the header; the mobile menu now appears below 1100px.
+- The facilities team is the only contact on the site: 0906 989 3085 · facilities.management@orangeislandng.com (footers, Contact page, Utilities, Building, mobile menu). The general hello@ email and +234 813 299 2279 were removed everywhere, including the archived news posts in `data/db.json`.
+- Lagos State Government and FW Dredging logos on the Who we are page (`public/images/lagos-state-government-logo.png`, `fw-dredging-logo.png`).
+- Venco: Utility Prepayments, Issue Tracking and Community Broadcasts marked “Coming soon”.
+
 ## Still to fill in (placeholders from the design)
 
-- Footer: `Facilities team: [FACILITIES PHONE / EMAIL]`
 - Utilities → Electricity: `[Add IPP details to confirm: plant capacity, hours of supply, tariff/metering arrangement, go-live date.]`
 - Utilities → Connectivity: `[fibre / high-speed internet — confirm service]` and the three bullet placeholders (how to request, packages, support contact). Same wording on the Home "Connected to MTN" card.
-- Utilities → Contact the facilities team: `[Facilities direct line]`
-- Who we are → Key milestones: two `[Year]` entries.
+- Who we are → Key milestones: Phase 1 and Phase 2 show `20..` until the exact years are confirmed.
 - Links still pointing to `#`: Home "Take a tour (video)", "Download brochure", "Download the ORIIS app", footer Terms & Conditions / Privacy Policy.
 - Connectivity photos (Home and Utilities) use `public/images/MTN.jpg` (695×441). A larger version (1200px+ wide) would look sharper on high-resolution screens.
 - Board of directors cards have empty photo boxes, as in the design.

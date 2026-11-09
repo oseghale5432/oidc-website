@@ -110,13 +110,13 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Email us</h3>
               <p className="text-sm text-gray-600 leading-relaxed font-light mb-4">
-                Have a question or need assistance? Our team is just an email away.
+                Have a question or need assistance? Our facilities team is just an email away.
               </p>
               <a
-                href="mailto:hello@orangeislandng.com"
+                href="mailto:facilities.management@orangeislandng.com"
                 className="text-[#d9531e] hover:text-[#b83e10] hover:underline font-semibold text-sm transition break-all"
               >
-                hello@orangeislandng.com
+                facilities.management@orangeislandng.com
               </a>
             </div>
 
@@ -127,13 +127,13 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Call us</h3>
               <p className="text-sm text-gray-600 leading-relaxed font-light mb-4">
-                For immediate assistance or urgent inquiries, reach us by phone during office hours.
+                For immediate assistance or urgent inquiries, call our facilities team during office hours.
               </p>
               <a
-                href="tel:+2348132992279"
+                href="tel:+2349069893085"
                 className="text-[#d9531e] hover:text-[#b83e10] hover:underline font-semibold text-sm transition"
               >
-                (+234) 0813 299 2279
+                0906 989 3085
               </a>
             </div>
           </div>

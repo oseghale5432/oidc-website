@@ -74,7 +74,7 @@ export default function FacilitiesForm() {
         {state === 'sending' ? 'Sending…' : 'Send request'}
       </button>
       {state === 'done' && <p role="status" style={{ margin: 0, fontSize: '15px', color: '#4A6A3C', fontWeight: 700 }}>Thank you — the facilities team will be in touch.</p>}
-      {state === 'error' && <p role="alert" style={{ margin: 0, fontSize: '15px', color: '#A9481A', fontWeight: 700 }}>Something went wrong. Please call +234 813 299 2279.</p>}
+      {state === 'error' && <p role="alert" style={{ margin: 0, fontSize: '15px', color: '#A9481A', fontWeight: 700 }}>Something went wrong. Please call 0906 989 3085.</p>}
     </form>
   );
 }

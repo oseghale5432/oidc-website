@@ -17,7 +17,7 @@ export default function SiteFooter() {
         <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px', fontSize: '14px' }}>
           <Image src="/logo-white.png" alt="Orange Island" width={1047} height={484} style={{ height: '48px', width: 'auto', display: 'block' }} />
           <span style={{ lineHeight: 1.6 }}>
-            hello@orangeislandng.com · +234 813 299 2279
+            Facilities team: 0906 989 3085 · facilities.management@orangeislandng.com
             <br />
             On Oba Ademola Elegushi Boulevard, Lagoon District, Freedom Way, Lekki Phase 1, Lagos.
           </span>
@@ -41,9 +41,9 @@ export default function SiteFooter() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '15px' }}>
             <span style={{ fontWeight: 700, color: '#FFFFFF' }}>Contact</span>
-            <a href="mailto:hello@orangeislandng.com" style={{ color: '#F2A65A' }}>hello@orangeislandng.com</a>
-            <a href="tel:+2348132992279" style={{ color: '#F2A65A' }}>+234 813 299 2279</a>
-            <span>Facilities team: [FACILITIES PHONE / EMAIL]</span>
+            <span style={{ color: '#D6DFE5' }}>Facilities team</span>
+            <a href="tel:+2349069893085" style={{ color: '#F2A65A' }}>0906 989 3085</a>
+            <a href="mailto:facilities.management@orangeislandng.com" style={{ color: '#F2A65A', fontSize: '14px' }}>facilities.management<wbr />@orangeislandng.com</a>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '15px' }}>
             <span style={{ fontWeight: 700, color: '#FFFFFF' }}>The island</span>
