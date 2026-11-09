@@ -15,7 +15,7 @@ export default function BuildingPage() {
           <h1 style={{ margin: "0 0 20px", fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif", fontWeight: 600, fontSize: "64px", lineHeight: 1.02 }}>Building on Orange Island</h1>
           <p style={{ margin: "0 0 28px", fontSize: "20px", lineHeight: 1.55, color: "#D6DFE5", maxWidth: "780px" }}>Physical planning and building development guidelines. A step-by-step guide to designing, approving and constructing your property, in line with estate and Lagos State regulations.</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-            <Link href="/physical-planning-document" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#C9611F", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>Download the full guidelines (PDF)</Link>
+            <Link href="/physical-planning-document" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", background: "#C9611F", color: "#FFFFFF", textDecoration: "none", fontWeight: 700 }}>See full guidelines</Link>
             {' '}
             <a href="#approvals" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 20px", border: "2px solid #FFFFFF", color: "#FFFFFF", textDecoration: "none", fontWeight: 700, boxSizing: "border-box" }}>See the approval process</a>
           </div>
@@ -26,13 +26,13 @@ export default function BuildingPage() {
         <div className="wrap">
           <h2 style={{ margin: "0 0 20px", fontSize: "16px", letterSpacing: "3px", color: "#A9481A" }}>YOUR JOURNEY IN 7 STEPS</h2>
           <ol style={{ margin: "0", padding: "0", listStyle: "none", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 1</strong>Understand your plot regulations</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 2</strong>Site &amp; feasibility studies</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 3</strong>Concept architectural design</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 4</strong>Lagos State approvals</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #C9611F", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 5</strong>Pre-construction permit</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #C9611F", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 6</strong>Construction permit</li>
-            <li style={{ flex: "1 1 150px", padding: "14px", borderTop: "4px solid #C9611F", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 7</strong>Construction phase</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 1</strong>Understand your plot regulations</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 2</strong>Site &amp; feasibility studies</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 3</strong>Concept architectural design</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 4</strong>Lagos State approvals</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 5</strong>Pre-construction permit</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 6</strong>Construction permit</li>
+            <li style={{ flex: "1 1 130px", padding: "14px", borderTop: "4px solid #0E2838", fontSize: "15px" }}><strong style={{ display: "block", fontSize: "13px", color: "#5B6670" }}>STEP 7</strong>Construction phase</li>
           </ol>
         </div>
       </section>

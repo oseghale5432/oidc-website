@@ -4,6 +4,18 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/content';
 import PageTitle from '@/components/site/PageTitle';
+import NewsCard from '@/components/site/NewsCard';
+import NewsletterForm from '@/components/site/NewsletterForm';
+import { formatPostDate, postKind, postSummary, readingMinutes } from '@/lib/news';
+
+const SERIF = "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif";
+
+/** Imported posts often repeat the title as their first heading; drop it since the page title shows it. */
+function withoutRepeatedTitle(html: string, title: string) {
+  const norm = (t: string) => t.replace(/<[^>]+>/g, '').replace(/&[#a-z0-9]+;/gi, ' ').replace(/[^a-z0-9]+/gi, ' ').trim().toLowerCase();
+  const m = html.match(/^\s*<(h[1-6])[^>]*>([\s\S]*?)<\/\1>/i);
+  return m && norm(m[2]) === norm(title) ? html.slice(m[0].length) : html;
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${post.title} - Orange Island Lagos`,
-    description: post.excerpt || 'Read the latest news update from Orange Island Lagos.',
+    description: postSummary(post, 160) || 'Read the latest news update from Orange Island Lagos.',
   };
 }
 
@@ -41,104 +53,60 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const content = withoutRepeatedTitle(post.content || '', post.title);
+  const startsWithImage = /^\s*(<p>\s*)?(<figure[^>]*>\s*)?<img/i.test(content);
+  const more = (await getBlogPosts()).filter((p) => p.slug !== post.slug).slice(0, 3);
+
   return (
-    <div className="bg-white">
+    <div className="tpl">
       <PageTitle
         title={post.title}
         crumbs={[{ label: 'News & media', href: '/blog' }, { label: post.title }]}
-        meta={`${new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })} · 5 min read`}
+        meta={`${postKind(post)} · ${formatPostDate(post.date)} · ${readingMinutes(post)} min read`}
       />
 
-      {/* Content Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <article>
-            {/* Featured Image */}
-            {post.image && (
-              <div className="mb-12 rounded-xl overflow-hidden h-96 relative border border-gray-150 shadow-sm">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 700px"
-                />
-              </div>
-            )}
-
-            {/* Excerpt */}
-            <div className="mb-8 pb-8 border-b border-gray-250">
-              <p className="text-2xl text-gray-700 leading-relaxed italic font-light">
-                {post.excerpt}
-              </p>
+      <section style={{ background: '#FFFFFF', paddingTop: '56px', paddingBottom: '72px' }}>
+        <div className="wrap" style={{ maxWidth: '860px' }}>
+          {post.image && !startsWithImage && (
+            <div style={{ position: 'relative', aspectRatio: '16 / 9', background: '#0E2838', overflow: 'hidden', marginBottom: '40px' }}>
+              <Image src={post.image} alt="" fill priority sizes="(max-width: 860px) 100vw, 860px" style={{ objectFit: 'cover' }} />
             </div>
-
-            {/* Main Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="text-gray-800 leading-relaxed text-lg font-light blog-content-html"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            </div>
-
-            {/* Post Meta Box */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-150">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">About This Post</h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div>
-                    <p className="text-sm text-gray-500 font-bold mb-2 uppercase">Published</p>
-                    <p className="text-lg text-gray-900 font-medium">
-                      {new Date(post.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-bold mb-2 uppercase">Category</p>
-                    <p className="text-lg text-gray-900 font-medium">Community Update</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-bold mb-2 uppercase">Reading Time</p>
-                    <p className="text-lg text-gray-900 font-medium">5 minutes</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
+          )}
+          <article className="article-body" dangerouslySetInnerHTML={{ __html: content }} />
+          <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid #E5DED3', display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Link href="/blog" style={{ fontWeight: 700 }}>← All news</Link>
+            <span style={{ fontSize: '15px', color: '#5B6670' }}>
+              Questions? Facilities team: <a href="tel:+2349069893085">0906 989 3085</a>
+            </span>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-amber-600 to-amber-700 text-white py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Interested in Orange Island?</h2>
-          <p className="text-xl text-amber-50 mb-8 font-light">
-            Get in touch with our team to learn more about available properties
-          </p>
-          <Link
-            href="/contact"
-            id="blog-detail-cta-contact"
-            className="inline-block bg-white text-amber-600 px-8 py-4 rounded-lg font-bold hover:bg-amber-50 transition transform hover:scale-105"
-          >
-            Contact Us Today
-          </Link>
-        </div>
-      </section>
+      {more.length > 0 && (
+        <section style={{ paddingTop: '72px', paddingBottom: '72px' }}>
+          <div className="wrap">
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: '12px', marginBottom: '32px' }}>
+              <h2 style={{ margin: 0, fontFamily: SERIF, fontWeight: 600, fontSize: '44px' }}>More from the island</h2>
+              <Link href="/blog" style={{ fontWeight: 700 }}>All news</Link>
+            </div>
+            <div className="g3">
+              {more.map((p) => (
+                <NewsCard key={p.id} post={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
-      {/* Related Posts Link */}
-      <section className="py-16 bg-gray-50 border-t border-gray-150">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">More News</h2>
-          <Link
-            href="/blog"
-            id="blog-detail-more-articles"
-            className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-bold text-lg"
-          >
-            View All Articles →
-          </Link>
+      <section style={{ background: '#F3ECE2', paddingTop: '56px', paddingBottom: '56px' }}>
+        <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ flex: '1 1 380px', minWidth: 0 }}>
+            <h2 style={{ margin: '0 0 8px', fontFamily: SERIF, fontWeight: 600, fontSize: '34px' }}>Stay informed</h2>
+            <p style={{ margin: 0, fontSize: '16px', color: '#3A4650' }}>Get development updates, service notices and our newsletter by email.</p>
+          </div>
+          <div style={{ flex: '1 1 420px', minWidth: 0 }}>
+            <NewsletterForm />
+          </div>
         </div>
       </section>
     </div>
